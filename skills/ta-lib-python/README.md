@@ -7,12 +7,15 @@ behaviour measured by running it.
 ## Install
 
 ```bash
-npx skills add codebytemirza/mql5-python-skill --skill ta-lib-python
+npx skills add codebytemirza/mql5-python-skill --full-depth --skill ta-lib-python
 
 # or, from a clone of this repo
 cd skills/ta-lib-python
 ./scripts/install.ps1
 ```
+
+`--full-depth` is required: without it the CLI only finds the skill at the
+repository root and never looks into `skills/`.
 
 ## Contents
 
