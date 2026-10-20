@@ -1,0 +1,4872 @@
+{
+  "package": "TA-Lib",
+  "version": "0.8.2",
+  "docs_site": "https://ta-lib.github.io/ta-lib-python/",
+  "functions": [
+    {
+      "name": "HT_DCPERIOD",
+      "group": "Cycle Indicators",
+      "display_name": "Hilbert Transform - Dominant Cycle Period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 32,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = HT_DCPERIOD(close)",
+      "notes": [
+        "NOTE: The HT_DCPERIOD function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/cycle_indicators.html"
+    },
+    {
+      "name": "HT_DCPHASE",
+      "group": "Cycle Indicators",
+      "display_name": "Hilbert Transform - Dominant Cycle Phase",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 63,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = HT_DCPHASE(close)",
+      "notes": [
+        "NOTE: The HT_DCPHASE function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/cycle_indicators.html"
+    },
+    {
+      "name": "HT_PHASOR",
+      "group": "Cycle Indicators",
+      "display_name": "Hilbert Transform - Phasor Components",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "inphase",
+        "quadrature"
+      ],
+      "lookback": 32,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "inphase, quadrature = HT_PHASOR(close)",
+      "notes": [
+        "NOTE: The HT_PHASOR function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/cycle_indicators.html"
+    },
+    {
+      "name": "HT_SINE",
+      "group": "Cycle Indicators",
+      "display_name": "Hilbert Transform - SineWave",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "sine",
+        "leadsine"
+      ],
+      "lookback": 63,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "sine, leadsine = HT_SINE(close)",
+      "notes": [
+        "NOTE: The HT_SINE function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/cycle_indicators.html"
+    },
+    {
+      "name": "HT_TRENDMODE",
+      "group": "Cycle Indicators",
+      "display_name": "Hilbert Transform - Trend vs Cycle Mode",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 63,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "integer = HT_TRENDMODE(close)",
+      "notes": [
+        "NOTE: The HT_TRENDMODE function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/cycle_indicators.html"
+    },
+    {
+      "name": "ADD",
+      "group": "Math Operators",
+      "display_name": "Vector Arithmetic Add",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ADD(high, low)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "CUMSUM",
+      "group": "Math Operators",
+      "display_name": "Cumulative Sum",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = CUMSUM(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "DIV",
+      "group": "Math Operators",
+      "display_name": "Vector Arithmetic Div",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = DIV(high, low)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "MAX",
+      "group": "Math Operators",
+      "display_name": "Highest value over a specified period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = MAX(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "MAXINDEX",
+      "group": "Math Operators",
+      "display_name": "Index of highest value over a specified period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "integer = MAXINDEX(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "MIN",
+      "group": "Math Operators",
+      "display_name": "Lowest value over a specified period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = MIN(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "MININDEX",
+      "group": "Math Operators",
+      "display_name": "Index of lowest value over a specified period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "integer = MININDEX(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "MINMAX",
+      "group": "Math Operators",
+      "display_name": "Lowest and highest values over a specified period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "min",
+        "max"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "min, max = MINMAX(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "MINMAXINDEX",
+      "group": "Math Operators",
+      "display_name": "Indexes of lowest and highest values over a specified period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "minidx",
+        "maxidx"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "minidx, maxidx = MINMAXINDEX(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "MULT",
+      "group": "Math Operators",
+      "display_name": "Vector Arithmetic Mult",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = MULT(high, low)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "SUB",
+      "group": "Math Operators",
+      "display_name": "Vector Arithmetic Subtraction",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = SUB(high, low)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "SUM",
+      "group": "Math Operators",
+      "display_name": "Summation",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = SUM(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html"
+    },
+    {
+      "name": "ACOS",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric ACos",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = ACOS(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "ASIN",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric ASin",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = ASIN(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "ATAN",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric ATan",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ATAN(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "CEIL",
+      "group": "Math Transform",
+      "display_name": "Vector Ceil",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = CEIL(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "COS",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric Cos",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = COS(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "COSH",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric Cosh",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = COSH(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "EXP",
+      "group": "Math Transform",
+      "display_name": "Vector Arithmetic Exp",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = EXP(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "FLOOR",
+      "group": "Math Transform",
+      "display_name": "Vector Floor",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = FLOOR(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "LN",
+      "group": "Math Transform",
+      "display_name": "Vector Log Natural",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = LN(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "LOG10",
+      "group": "Math Transform",
+      "display_name": "Vector Log10",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = LOG10(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "SIN",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric Sin",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = SIN(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "SINH",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric Sinh",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = SINH(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "SQRT",
+      "group": "Math Transform",
+      "display_name": "Vector Square Root",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = SQRT(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "TAN",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric Tan",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = TAN(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "TANH",
+      "group": "Math Transform",
+      "display_name": "Vector Trigonometric Tanh",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = TANH(close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html"
+    },
+    {
+      "name": "AC",
+      "group": "Momentum Indicators",
+      "display_name": "Accelerator/Decelerator Oscillator",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "fastperiod": 5,
+        "slowperiod": 34,
+        "signalperiod": 5
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 37,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = AC(high, low, fastperiod=5, slowperiod=34, signalperiod=5)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ADX",
+      "group": "Momentum Indicators",
+      "display_name": "Average Directional Movement Index",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 27,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = ADX(high, low, close, timeperiod=14)",
+      "notes": [
+        "NOTE: The ADX function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ADXR",
+      "group": "Momentum Indicators",
+      "display_name": "Average Directional Movement Index Rating",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 40,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ADXR(high, low, close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "AO",
+      "group": "Momentum Indicators",
+      "display_name": "Awesome Oscillator",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "fastperiod": 5,
+        "slowperiod": 34
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 33,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = AO(high, low, fastperiod=5, slowperiod=34)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "APO",
+      "group": "Momentum Indicators",
+      "display_name": "Absolute Price Oscillator",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "fastperiod": 12,
+        "slowperiod": 26,
+        "matype": 1
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 25,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = APO(close, fastperiod=12, slowperiod=26, matype=1)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "AROON",
+      "group": "Momentum Indicators",
+      "display_name": "Aroon",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "aroondown",
+        "aroonup"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "aroondown, aroonup = AROON(high, low, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "AROONOSC",
+      "group": "Momentum Indicators",
+      "display_name": "Aroon Oscillator",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = AROONOSC(high, low, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "BOP",
+      "group": "Momentum Indicators",
+      "display_name": "Balance Of Power",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = BOP(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "CCI",
+      "group": "Momentum Indicators",
+      "display_name": "Commodity Channel Index",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = CCI(high, low, close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "CMO",
+      "group": "Momentum Indicators",
+      "display_name": "Chande Momentum Oscillator",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = CMO(close, timeperiod=14)",
+      "notes": [
+        "NOTE: The CMO function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "CMOU",
+      "group": "Momentum Indicators",
+      "display_name": "Chande Momentum Oscillator (Unsmoothed)",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = CMOU(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "COPPOCK",
+      "group": "Momentum Indicators",
+      "display_name": "Coppock Curve",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "wmaperiod": 10,
+        "roc1period": 11,
+        "roc2period": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 23,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = COPPOCK(close, wmaperiod=10, roc1period=11, roc2period=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "DPO",
+      "group": "Momentum Indicators",
+      "display_name": "Detrended Price Oscillator",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 20
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 19,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = DPO(close, timeperiod=20)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "DX",
+      "group": "Momentum Indicators",
+      "display_name": "Directional Movement Index",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = DX(high, low, close, timeperiod=14)",
+      "notes": [
+        "NOTE: The DX function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ER",
+      "group": "Momentum Indicators",
+      "display_name": "Kaufman Efficiency Ratio",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ER(close, timeperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ERI",
+      "group": "Momentum Indicators",
+      "display_name": "Elder Ray Index (Bull Power / Bear Power)",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 13
+      },
+      "output_names": [
+        "bullpower",
+        "bearpower"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "bullpower, bearpower = ERI(high, low, close, timeperiod=13)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "FOSC",
+      "group": "Momentum Indicators",
+      "display_name": "Forecast Oscillator",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 5
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 5,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = FOSC(close, timeperiod=5)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "FRACTAL",
+      "group": "Momentum Indicators",
+      "display_name": "Williams Fractal",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "leftbars": 2,
+        "rightbars": 2
+      },
+      "output_names": [
+        "swinghigh",
+        "swinglow"
+      ],
+      "lookback": 4,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "swinghigh, swinglow = FRACTAL(high, low, leftbars=2, rightbars=2)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "IMI",
+      "group": "Momentum Indicators",
+      "display_name": "Intraday Momentum Index",
+      "input_names": [
+        "open",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = IMI(open, close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "KDJ",
+      "group": "Momentum Indicators",
+      "display_name": "KDJ Stochastic",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "fastk_period": 9,
+        "slowk_period": 3,
+        "slowk_matype": 13,
+        "slowd_period": 3,
+        "slowd_matype": 13
+      },
+      "output_names": [
+        "k",
+        "d",
+        "j"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "k, d, j = KDJ(high, low, close, fastk_period=9, slowk_period=3, slowk_matype=13, slowd_period=3, slowd_matype=13)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "MACD",
+      "group": "Momentum Indicators",
+      "display_name": "Moving Average Convergence/Divergence",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "fastperiod": 12,
+        "slowperiod": 26,
+        "signalperiod": 9
+      },
+      "output_names": [
+        "macd",
+        "macdsignal",
+        "macdhist"
+      ],
+      "lookback": 33,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "macd, macdsignal, macdhist = MACD(close, fastperiod=12, slowperiod=26, signalperiod=9)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "MACDEXT",
+      "group": "Momentum Indicators",
+      "display_name": "MACD with controllable MA type",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "fastperiod": 12,
+        "fastmatype": 0,
+        "slowperiod": 26,
+        "slowmatype": 0,
+        "signalperiod": 9,
+        "signalmatype": 0
+      },
+      "output_names": [
+        "macd",
+        "macdsignal",
+        "macdhist"
+      ],
+      "lookback": 33,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "macd, macdsignal, macdhist = MACDEXT(close, fastperiod=12, fastmatype=0, slowperiod=26, slowmatype=0, signalperiod=9, signalmatype=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "MACDFIX",
+      "group": "Momentum Indicators",
+      "display_name": "Moving Average Convergence/Divergence Fix 12/26",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "signalperiod": 9
+      },
+      "output_names": [
+        "macd",
+        "macdsignal",
+        "macdhist"
+      ],
+      "lookback": 33,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "macd, macdsignal, macdhist = MACDFIX(close, signalperiod=9)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "MFI",
+      "group": "Momentum Indicators",
+      "display_name": "Money Flow Index",
+      "input_names": [
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = MFI(high, low, close, volume, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "MINUS_DI",
+      "group": "Momentum Indicators",
+      "display_name": "Minus Directional Indicator",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = MINUS_DI(high, low, close, timeperiod=14)",
+      "notes": [
+        "NOTE: The MINUS_DI function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "MINUS_DM",
+      "group": "Momentum Indicators",
+      "display_name": "Minus Directional Movement",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = MINUS_DM(high, low, timeperiod=14)",
+      "notes": [
+        "NOTE: The MINUS_DM function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "MOM",
+      "group": "Momentum Indicators",
+      "display_name": "Momentum",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = MOM(close, timeperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "PLUS_DI",
+      "group": "Momentum Indicators",
+      "display_name": "Plus Directional Indicator",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = PLUS_DI(high, low, close, timeperiod=14)",
+      "notes": [
+        "NOTE: The PLUS_DI function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "PLUS_DM",
+      "group": "Momentum Indicators",
+      "display_name": "Plus Directional Movement",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = PLUS_DM(high, low, timeperiod=14)",
+      "notes": [
+        "NOTE: The PLUS_DM function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "PPO",
+      "group": "Momentum Indicators",
+      "display_name": "Percentage Price Oscillator",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "fastperiod": 12,
+        "slowperiod": 26,
+        "matype": 1
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 25,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = PPO(close, fastperiod=12, slowperiod=26, matype=1)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "QSTICK",
+      "group": "Momentum Indicators",
+      "display_name": "Qstick",
+      "input_names": [
+        "open",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 9,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = QSTICK(open, close, timeperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ROC",
+      "group": "Momentum Indicators",
+      "display_name": "Rate of change : ((price/prevPrice)-1)*100",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ROC(close, timeperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ROCP",
+      "group": "Momentum Indicators",
+      "display_name": "Rate of change Percentage: (price-prevPrice)/prevPrice",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ROCP(close, timeperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ROCR",
+      "group": "Momentum Indicators",
+      "display_name": "Rate of change ratio: (price/prevPrice)",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ROCR(close, timeperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ROCR100",
+      "group": "Momentum Indicators",
+      "display_name": "Rate of change ratio 100 scale: (price/prevPrice)*100",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ROCR100(close, timeperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "RSI",
+      "group": "Momentum Indicators",
+      "display_name": "Relative Strength Index",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = RSI(close, timeperiod=14)",
+      "notes": [
+        "NOTE: The RSI function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "SMI",
+      "group": "Momentum Indicators",
+      "display_name": "Stochastic Momentum Index",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 13,
+        "fastperiod": 2,
+        "slowperiod": 25,
+        "signalperiod": 9
+      },
+      "output_names": [
+        "smi",
+        "smisignal"
+      ],
+      "lookback": 45,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "smi, smisignal = SMI(high, low, close, timeperiod=13, fastperiod=2, slowperiod=25, signalperiod=9)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "STOCH",
+      "group": "Momentum Indicators",
+      "display_name": "Stochastic",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "fastk_period": 5,
+        "slowk_period": 3,
+        "slowk_matype": 0,
+        "slowd_period": 3,
+        "slowd_matype": 0
+      },
+      "output_names": [
+        "slowk",
+        "slowd"
+      ],
+      "lookback": 8,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "slowk, slowd = STOCH(high, low, close, fastk_period=5, slowk_period=3, slowk_matype=0, slowd_period=3, slowd_matype=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "STOCHF",
+      "group": "Momentum Indicators",
+      "display_name": "Stochastic Fast",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "fastk_period": 5,
+        "fastd_period": 3,
+        "fastd_matype": 0
+      },
+      "output_names": [
+        "fastk",
+        "fastd"
+      ],
+      "lookback": 6,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "fastk, fastd = STOCHF(high, low, close, fastk_period=5, fastd_period=3, fastd_matype=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "STOCHRSI",
+      "group": "Momentum Indicators",
+      "display_name": "Stochastic Relative Strength Index",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14,
+        "fastk_period": 5,
+        "fastd_period": 3,
+        "fastd_matype": 0
+      },
+      "output_names": [
+        "fastk",
+        "fastd"
+      ],
+      "lookback": 20,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "fastk, fastd = STOCHRSI(close, timeperiod=14, fastk_period=5, fastd_period=3, fastd_matype=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "TRIX",
+      "group": "Momentum Indicators",
+      "display_name": "1-day Rate-Of-Change (ROC) of a Triple Smooth EMA",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 88,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = TRIX(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "TSI",
+      "group": "Momentum Indicators",
+      "display_name": "True Strength Index",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "firstperiod": 25,
+        "secondperiod": 13
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 37,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = TSI(close, firstperiod=25, secondperiod=13)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ULTOSC",
+      "group": "Momentum Indicators",
+      "display_name": "Ultimate Oscillator",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod1": 7,
+        "timeperiod2": 14,
+        "timeperiod3": 28
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 28,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ULTOSC(high, low, close, timeperiod1=7, timeperiod2=14, timeperiod3=28)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "VHF",
+      "group": "Momentum Indicators",
+      "display_name": "Vertical Horizontal Filter",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 28
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 28,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = VHF(close, timeperiod=28)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "VORTEX",
+      "group": "Momentum Indicators",
+      "display_name": "Vortex Indicator",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "plusvi",
+        "minusvi"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "plusvi, minusvi = VORTEX(high, low, close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "WAD",
+      "group": "Momentum Indicators",
+      "display_name": "Williams' Accumulation/Distribution",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = WAD(high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "WILLR",
+      "group": "Momentum Indicators",
+      "display_name": "Williams' %R",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = WILLR(high, low, close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html"
+    },
+    {
+      "name": "ACCBANDS",
+      "group": "Overlap Studies",
+      "display_name": "Acceleration Bands",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 20
+      },
+      "output_names": [
+        "upperband",
+        "middleband",
+        "lowerband"
+      ],
+      "lookback": 19,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "upperband, middleband, lowerband = ACCBANDS(high, low, close, timeperiod=20)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "BBANDS",
+      "group": "Overlap Studies",
+      "display_name": "Bollinger Bands",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 20,
+        "nbdevup": 2.0,
+        "nbdevdn": 2.0,
+        "matype": 0
+      },
+      "output_names": [
+        "upperband",
+        "middleband",
+        "lowerband"
+      ],
+      "lookback": 19,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "upperband, middleband, lowerband = BBANDS(close, timeperiod=20, nbdevup=2, nbdevdn=2, matype=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "DEMA",
+      "group": "Overlap Studies",
+      "display_name": "Double Exponential Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 58,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = DEMA(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "DONCHIAN",
+      "group": "Overlap Studies",
+      "display_name": "Donchian Channels",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 20
+      },
+      "output_names": [
+        "upperband",
+        "middleband",
+        "lowerband"
+      ],
+      "lookback": 19,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "upperband, middleband, lowerband = DONCHIAN(high, low, timeperiod=20)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "EMA",
+      "group": "Overlap Studies",
+      "display_name": "Exponential Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = EMA(close, timeperiod=30)",
+      "notes": [
+        "NOTE: The EMA function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "HMA",
+      "group": "Overlap Studies",
+      "display_name": "Hull Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 20
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 22,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = HMA(close, timeperiod=20)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "HT_TRENDLINE",
+      "group": "Overlap Studies",
+      "display_name": "Hilbert Transform - Instantaneous Trendline",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 63,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = HT_TRENDLINE(close)",
+      "notes": [
+        "NOTE: The HT_TRENDLINE function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "KAMA",
+      "group": "Overlap Studies",
+      "display_name": "Kaufman Adaptive Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 30,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = KAMA(close, timeperiod=30)",
+      "notes": [
+        "NOTE: The KAMA function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "KC",
+      "group": "Overlap Studies",
+      "display_name": "Keltner Channels",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 20,
+        "atrperiod": 10,
+        "nbdev": 2.0
+      },
+      "output_names": [
+        "upperband",
+        "middleband",
+        "lowerband"
+      ],
+      "lookback": 19,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "upperband, middleband, lowerband = KC(high, low, close, timeperiod=20, atrperiod=10, nbdev=2)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "MA",
+      "group": "Overlap Studies",
+      "display_name": "Moving average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30,
+        "matype": 0
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = MA(close, timeperiod=30, matype=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "MAMA",
+      "group": "Overlap Studies",
+      "display_name": "MESA Adaptive Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "fastlimit": 0.5,
+        "slowlimit": 0.05
+      },
+      "output_names": [
+        "mama",
+        "fama"
+      ],
+      "lookback": 32,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "mama, fama = MAMA(close, fastlimit=0, slowlimit=0)",
+      "notes": [
+        "NOTE: The MAMA function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "MAVP",
+      "group": "Overlap Studies",
+      "display_name": "Moving average with variable period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "minperiod": 2,
+        "maxperiod": 30,
+        "matype": 0
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = MAVP(close, periods, minperiod=2, maxperiod=30, matype=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "MIDPOINT",
+      "group": "Overlap Studies",
+      "display_name": "MidPoint over period",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = MIDPOINT(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "MIDPRICE",
+      "group": "Overlap Studies",
+      "display_name": "Midpoint Price over period",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = MIDPRICE(high, low, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "RMA",
+      "group": "Overlap Studies",
+      "display_name": "Wilder's Smoothed Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = RMA(close, timeperiod=30)",
+      "notes": [
+        "NOTE: The RMA function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "SAR",
+      "group": "Overlap Studies",
+      "display_name": "Parabolic SAR",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "acceleration": 0.02,
+        "maximum": 0.2
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 1,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = SAR(high, low, acceleration=0, maximum=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "SAREXT",
+      "group": "Overlap Studies",
+      "display_name": "Parabolic SAR - Extended",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "startvalue": 0.0,
+        "offsetonreverse": 0.0,
+        "accelerationinitlong": 0.02,
+        "accelerationlong": 0.02,
+        "accelerationmaxlong": 0.2,
+        "accelerationinitshort": 0.02,
+        "accelerationshort": 0.02,
+        "accelerationmaxshort": 0.2
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 1,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = SAREXT(high, low, startvalue=0, offsetonreverse=0, accelerationinitlong=0, accelerationlong=0, accelerationmaxlong=0, accelerationinitshort=0, accelerationshort=0, accelerationmaxshort=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "SMA",
+      "group": "Overlap Studies",
+      "display_name": "Simple Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = SMA(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "SUPERTREND",
+      "group": "Overlap Studies",
+      "display_name": "SuperTrend",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 10,
+        "multiplier": 3.0
+      },
+      "output_names": [
+        "supertrend",
+        "trend"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "supertrend, trend = SUPERTREND(high, low, close, timeperiod=10, multiplier=3)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "T3",
+      "group": "Overlap Studies",
+      "display_name": "Triple Exponential Moving Average (T3)",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 5,
+        "vfactor": 0.7
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 24,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = T3(close, timeperiod=5, vfactor=0)",
+      "notes": [
+        "NOTE: The T3 function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "TEMA",
+      "group": "Overlap Studies",
+      "display_name": "Triple Exponential Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 87,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = TEMA(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "TRIMA",
+      "group": "Overlap Studies",
+      "display_name": "Triangular Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = TRIMA(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "VWMA",
+      "group": "Overlap Studies",
+      "display_name": "Volume Weighted Moving Average",
+      "input_names": [
+        "volume"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = VWMA(close, volume, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "WMA",
+      "group": "Overlap Studies",
+      "display_name": "Weighted Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = WMA(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "ZLEMA",
+      "group": "Overlap Studies",
+      "display_name": "Zero-Lag Exponential Moving Average",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 43,
+      "function_flags": [
+        "A period of 1 performs no smoothing",
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = ZLEMA(close, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html"
+    },
+    {
+      "name": "CDL2CROWS",
+      "group": "Pattern Recognition",
+      "display_name": "Two Crows",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDL2CROWS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDL3BLACKCROWS",
+      "group": "Pattern Recognition",
+      "display_name": "Three Black Crows",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDL3BLACKCROWS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDL3INSIDE",
+      "group": "Pattern Recognition",
+      "display_name": "Three Inside Up/Down",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDL3INSIDE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDL3LINESTRIKE",
+      "group": "Pattern Recognition",
+      "display_name": "Three-Line Strike",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 8,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDL3LINESTRIKE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDL3OUTSIDE",
+      "group": "Pattern Recognition",
+      "display_name": "Three Outside Up/Down",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 3,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDL3OUTSIDE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDL3STARSINSOUTH",
+      "group": "Pattern Recognition",
+      "display_name": "Three Stars In The South",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDL3STARSINSOUTH(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDL3WHITESOLDIERS",
+      "group": "Pattern Recognition",
+      "display_name": "Three Advancing White Soldiers",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDL3WHITESOLDIERS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLABANDONEDBABY",
+      "group": "Pattern Recognition",
+      "display_name": "Abandoned Baby",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "penetration": 0.3
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLABANDONEDBABY(open, high, low, close, penetration=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLADVANCEBLOCK",
+      "group": "Pattern Recognition",
+      "display_name": "Advance Block",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLADVANCEBLOCK(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLBELTHOLD",
+      "group": "Pattern Recognition",
+      "display_name": "Belt-hold",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLBELTHOLD(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLBREAKAWAY",
+      "group": "Pattern Recognition",
+      "display_name": "Breakaway",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLBREAKAWAY(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLCLOSINGMARUBOZU",
+      "group": "Pattern Recognition",
+      "display_name": "Closing Marubozu",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLCLOSINGMARUBOZU(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLCONCEALBABYSWALL",
+      "group": "Pattern Recognition",
+      "display_name": "Concealing Baby Swallow",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLCONCEALBABYSWALL(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLCOUNTERATTACK",
+      "group": "Pattern Recognition",
+      "display_name": "Counterattack",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLCOUNTERATTACK(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLDARKCLOUDCOVER",
+      "group": "Pattern Recognition",
+      "display_name": "Dark Cloud Cover",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "penetration": 0.5
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLDARKCLOUDCOVER(open, high, low, close, penetration=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLDOJI",
+      "group": "Pattern Recognition",
+      "display_name": "Doji",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLDOJI(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLDOJISTAR",
+      "group": "Pattern Recognition",
+      "display_name": "Doji Star",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLDOJISTAR(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLDRAGONFLYDOJI",
+      "group": "Pattern Recognition",
+      "display_name": "Dragonfly Doji",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLDRAGONFLYDOJI(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLENGULFING",
+      "group": "Pattern Recognition",
+      "display_name": "Engulfing Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 2,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLENGULFING(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLEVENINGDOJISTAR",
+      "group": "Pattern Recognition",
+      "display_name": "Evening Doji Star",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "penetration": 0.3
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLEVENINGDOJISTAR(open, high, low, close, penetration=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLEVENINGSTAR",
+      "group": "Pattern Recognition",
+      "display_name": "Evening Star",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "penetration": 0.3
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLEVENINGSTAR(open, high, low, close, penetration=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLGAPSIDESIDEWHITE",
+      "group": "Pattern Recognition",
+      "display_name": "Up/Down-gap side-by-side white lines",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 7,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLGAPSIDESIDEWHITE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLGRAVESTONEDOJI",
+      "group": "Pattern Recognition",
+      "display_name": "Gravestone Doji",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLGRAVESTONEDOJI(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHAMMER",
+      "group": "Pattern Recognition",
+      "display_name": "Hammer",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHAMMER(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHANGINGMAN",
+      "group": "Pattern Recognition",
+      "display_name": "Hanging Man",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHANGINGMAN(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHARAMI",
+      "group": "Pattern Recognition",
+      "display_name": "Harami Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHARAMI(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHARAMICROSS",
+      "group": "Pattern Recognition",
+      "display_name": "Harami Cross Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHARAMICROSS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHIGHWAVE",
+      "group": "Pattern Recognition",
+      "display_name": "High-Wave Candle",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHIGHWAVE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHIKKAKE",
+      "group": "Pattern Recognition",
+      "display_name": "Hikkake Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 5,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHIKKAKE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHIKKAKEMOD",
+      "group": "Pattern Recognition",
+      "display_name": "Modified Hikkake Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHIKKAKEMOD(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLHOMINGPIGEON",
+      "group": "Pattern Recognition",
+      "display_name": "Homing Pigeon",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLHOMINGPIGEON(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLIDENTICAL3CROWS",
+      "group": "Pattern Recognition",
+      "display_name": "Identical Three Crows",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLIDENTICAL3CROWS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLINNECK",
+      "group": "Pattern Recognition",
+      "display_name": "In-Neck Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLINNECK(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLINVERTEDHAMMER",
+      "group": "Pattern Recognition",
+      "display_name": "Inverted Hammer",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLINVERTEDHAMMER(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLKICKING",
+      "group": "Pattern Recognition",
+      "display_name": "Kicking",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLKICKING(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLKICKINGBYLENGTH",
+      "group": "Pattern Recognition",
+      "display_name": "Kicking - bull/bear determined by the longer marubozu",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLKICKINGBYLENGTH(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLLADDERBOTTOM",
+      "group": "Pattern Recognition",
+      "display_name": "Ladder Bottom",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLLADDERBOTTOM(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLLONGLEGGEDDOJI",
+      "group": "Pattern Recognition",
+      "display_name": "Long Legged Doji",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLLONGLEGGEDDOJI(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLLONGLINE",
+      "group": "Pattern Recognition",
+      "display_name": "Long Line Candle",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLLONGLINE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLMARUBOZU",
+      "group": "Pattern Recognition",
+      "display_name": "Marubozu",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLMARUBOZU(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLMATCHINGLOW",
+      "group": "Pattern Recognition",
+      "display_name": "Matching Low",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 6,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLMATCHINGLOW(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLMATHOLD",
+      "group": "Pattern Recognition",
+      "display_name": "Mat Hold",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "penetration": 0.5
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLMATHOLD(open, high, low, close, penetration=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLMORNINGDOJISTAR",
+      "group": "Pattern Recognition",
+      "display_name": "Morning Doji Star",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "penetration": 0.3
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLMORNINGDOJISTAR(open, high, low, close, penetration=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLMORNINGSTAR",
+      "group": "Pattern Recognition",
+      "display_name": "Morning Star",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "penetration": 0.3
+      },
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLMORNINGSTAR(open, high, low, close, penetration=0)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLONNECK",
+      "group": "Pattern Recognition",
+      "display_name": "On-Neck Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLONNECK(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLPIERCING",
+      "group": "Pattern Recognition",
+      "display_name": "Piercing Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLPIERCING(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLRICKSHAWMAN",
+      "group": "Pattern Recognition",
+      "display_name": "Rickshaw Man",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLRICKSHAWMAN(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLRISEFALL3METHODS",
+      "group": "Pattern Recognition",
+      "display_name": "Rising/Falling Three Methods",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLRISEFALL3METHODS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLSEPARATINGLINES",
+      "group": "Pattern Recognition",
+      "display_name": "Separating Lines",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLSEPARATINGLINES(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLSHOOTINGSTAR",
+      "group": "Pattern Recognition",
+      "display_name": "Shooting Star",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLSHOOTINGSTAR(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLSHORTLINE",
+      "group": "Pattern Recognition",
+      "display_name": "Short Line Candle",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLSHORTLINE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLSPINNINGTOP",
+      "group": "Pattern Recognition",
+      "display_name": "Spinning Top",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLSPINNINGTOP(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLSTALLEDPATTERN",
+      "group": "Pattern Recognition",
+      "display_name": "Stalled Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLSTALLEDPATTERN(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLSTICKSANDWICH",
+      "group": "Pattern Recognition",
+      "display_name": "Stick Sandwich",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 7,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLSTICKSANDWICH(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLTAKURI",
+      "group": "Pattern Recognition",
+      "display_name": "Takuri (Dragonfly Doji with very long lower shadow)",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 10,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLTAKURI(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLTASUKIGAP",
+      "group": "Pattern Recognition",
+      "display_name": "Tasuki Gap",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 7,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLTASUKIGAP(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLTHRUSTING",
+      "group": "Pattern Recognition",
+      "display_name": "Thrusting Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 11,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLTHRUSTING(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLTRISTAR",
+      "group": "Pattern Recognition",
+      "display_name": "Tristar Pattern",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLTRISTAR(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLUNIQUE3RIVER",
+      "group": "Pattern Recognition",
+      "display_name": "Unique 3 River",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLUNIQUE3RIVER(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLUPSIDEGAP2CROWS",
+      "group": "Pattern Recognition",
+      "display_name": "Upside Gap Two Crows",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 12,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLUPSIDEGAP2CROWS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "CDLXSIDEGAP3METHODS",
+      "group": "Pattern Recognition",
+      "display_name": "Upside/Downside Gap Three Methods",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "integer"
+      ],
+      "lookback": 2,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is a candlestick"
+      ],
+      "signature": "integer = CDLXSIDEGAP3METHODS(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html"
+    },
+    {
+      "name": "AVGDEV",
+      "group": "Price Transform",
+      "display_name": "Average Deviation",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = AVGDEV(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/price_transform.html"
+    },
+    {
+      "name": "AVGPRICE",
+      "group": "Price Transform",
+      "display_name": "Average Price",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = AVGPRICE(open, high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/price_transform.html"
+    },
+    {
+      "name": "HA",
+      "group": "Price Transform",
+      "display_name": "Heikin-Ashi Candles",
+      "input_names": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "haopen",
+        "hahigh",
+        "halow",
+        "haclose"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "haopen, hahigh, halow, haclose = HA(open, high, low, close)",
+      "notes": [
+        "NOTE: The HA function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/price_transform.html"
+    },
+    {
+      "name": "MEDPRICE",
+      "group": "Price Transform",
+      "display_name": "Median Price",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = MEDPRICE(high, low)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/price_transform.html"
+    },
+    {
+      "name": "TYPPRICE",
+      "group": "Price Transform",
+      "display_name": "Typical Price",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = TYPPRICE(high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/price_transform.html"
+    },
+    {
+      "name": "WCLPRICE",
+      "group": "Price Transform",
+      "display_name": "Weighted Close Price",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = WCLPRICE(high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/price_transform.html"
+    },
+    {
+      "name": "BETA",
+      "group": "Statistic Functions",
+      "display_name": "Beta",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 5
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 5,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = BETA(high, low, timeperiod=5)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "CORREL",
+      "group": "Statistic Functions",
+      "display_name": "Pearson's Correlation Coefficient (r)",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = CORREL(high, low, timeperiod=30)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "LINEARREG",
+      "group": "Statistic Functions",
+      "display_name": "Linear Regression",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = LINEARREG(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "LINEARREG_ANGLE",
+      "group": "Statistic Functions",
+      "display_name": "Linear Regression Angle",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = LINEARREG_ANGLE(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "LINEARREG_INTERCEPT",
+      "group": "Statistic Functions",
+      "display_name": "Linear Regression Intercept",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = LINEARREG_INTERCEPT(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "LINEARREG_SLOPE",
+      "group": "Statistic Functions",
+      "display_name": "Linear Regression Slope",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = LINEARREG_SLOPE(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "PERCENTILE",
+      "group": "Statistic Functions",
+      "display_name": "Percentile (nearest rank)",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 30,
+        "percentile": 50.0
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 29,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = PERCENTILE(close, timeperiod=30, percentile=50)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "PERCENTRANK",
+      "group": "Statistic Functions",
+      "display_name": "Percent Rank",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 100
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 100,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = PERCENTRANK(close, timeperiod=100)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "STDDEV",
+      "group": "Statistic Functions",
+      "display_name": "Standard Deviation",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 5,
+        "nbdev": 1.0
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 4,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = STDDEV(close, timeperiod=5, nbdev=1)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "TSF",
+      "group": "Statistic Functions",
+      "display_name": "Time Series Forecast",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API"
+      ],
+      "signature": "real = TSF(close, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "VAR",
+      "group": "Statistic Functions",
+      "display_name": "Variance",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 5,
+        "nbdev": 1.0
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 4,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = VAR(close, timeperiod=5, nbdev=1)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html"
+    },
+    {
+      "name": "ADR",
+      "group": "Volatility Indicators",
+      "display_name": "Average Day Range",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = ADR(high, low, timeperiod=14)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html"
+    },
+    {
+      "name": "ATR",
+      "group": "Volatility Indicators",
+      "display_name": "Average True Range",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = ATR(high, low, close, timeperiod=14)",
+      "notes": [
+        "NOTE: The ATR function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html"
+    },
+    {
+      "name": "CVI",
+      "group": "Volatility Indicators",
+      "display_name": "Chaikin's Volatility",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "timeperiod": 10,
+        "rocperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 19,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = CVI(high, low, timeperiod=10, rocperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html"
+    },
+    {
+      "name": "MASSI",
+      "group": "Volatility Indicators",
+      "display_name": "Mass Index",
+      "input_names": [
+        "high",
+        "low"
+      ],
+      "parameters": {
+        "fastperiod": 9,
+        "slowperiod": 25
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 40,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = MASSI(high, low, fastperiod=9, slowperiod=25)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html"
+    },
+    {
+      "name": "NATR",
+      "group": "Volatility Indicators",
+      "display_name": "Normalized Average True Range",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 14,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = NATR(high, low, close, timeperiod=14)",
+      "notes": [
+        "NOTE: The NATR function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html"
+    },
+    {
+      "name": "RVI",
+      "group": "Volatility Indicators",
+      "display_name": "Relative Volatility Index",
+      "input_names": [
+        "close"
+      ],
+      "parameters": {
+        "timeperiod": 14,
+        "stddevperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 22,
+      "function_flags": [
+        "Function has a streaming API",
+        "Function has an unstable period"
+      ],
+      "signature": "real = RVI(close, timeperiod=14, stddevperiod=10)",
+      "notes": [
+        "NOTE: The RVI function has an unstable period."
+      ],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html"
+    },
+    {
+      "name": "TRANGE",
+      "group": "Volatility Indicators",
+      "display_name": "True Range",
+      "input_names": [
+        "high",
+        "low",
+        "close"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 1,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = TRANGE(high, low, close)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html"
+    },
+    {
+      "name": "AD",
+      "group": "Volume Indicators",
+      "display_name": "Chaikin A/D Line",
+      "input_names": [
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = AD(high, low, close, volume)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "ADOSC",
+      "group": "Volume Indicators",
+      "display_name": "Chaikin A/D Oscillator",
+      "input_names": [
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "parameters": {
+        "fastperiod": 3,
+        "slowperiod": 10
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 9,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = ADOSC(high, low, close, volume, fastperiod=3, slowperiod=10)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "CMF",
+      "group": "Volume Indicators",
+      "display_name": "Chaikin Money Flow",
+      "input_names": [
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "parameters": {
+        "timeperiod": 20
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 19,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = CMF(high, low, close, volume, timeperiod=20)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "EFI",
+      "group": "Volume Indicators",
+      "display_name": "Elder's Force Index",
+      "input_names": [
+        "close",
+        "volume"
+      ],
+      "parameters": {
+        "timeperiod": 13
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 13,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = EFI(close, volume, timeperiod=13)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "MARKETFI",
+      "group": "Volume Indicators",
+      "display_name": "Market Facilitation Index",
+      "input_names": [
+        "high",
+        "low",
+        "volume"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = MARKETFI(high, low, volume)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "NVI",
+      "group": "Volume Indicators",
+      "display_name": "Negative Volume Index",
+      "input_names": [
+        "close",
+        "volume"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = NVI(close, volume)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "OBV",
+      "group": "Volume Indicators",
+      "display_name": "On Balance Volume",
+      "input_names": [
+        "volume"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = OBV(close, volume)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "PVI",
+      "group": "Volume Indicators",
+      "display_name": "Positive Volume Index",
+      "input_names": [
+        "close",
+        "volume"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = PVI(close, volume)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "PVO",
+      "group": "Volume Indicators",
+      "display_name": "Percentage Volume Oscillator",
+      "input_names": [
+        "volume"
+      ],
+      "parameters": {
+        "fastperiod": 12,
+        "slowperiod": 26,
+        "matype": 1
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 25,
+      "function_flags": [
+        "Function has a streaming API"
+      ],
+      "signature": "real = PVO(volume, fastperiod=12, slowperiod=26, matype=1)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "PVT",
+      "group": "Volume Indicators",
+      "display_name": "Price Volume Trend",
+      "input_names": [
+        "close",
+        "volume"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = PVT(close, volume)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "RVOL",
+      "group": "Volume Indicators",
+      "display_name": "Relative Volume",
+      "input_names": [
+        "volume"
+      ],
+      "parameters": {
+        "timeperiod": 20
+      },
+      "output_names": [
+        "real"
+      ],
+      "lookback": 20,
+      "function_flags": [
+        "Function has a streaming API",
+        "Output can be NaN or infinite"
+      ],
+      "signature": "real = RVOL(volume, timeperiod=20)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    },
+    {
+      "name": "VWAP",
+      "group": "Volume Indicators",
+      "display_name": "Volume Weighted Average Price",
+      "input_names": [
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "parameters": {},
+      "output_names": [
+        "real"
+      ],
+      "lookback": 0,
+      "function_flags": [
+        "Output scale same as input",
+        "Function has a streaming API",
+        "Output is path-dependent"
+      ],
+      "signature": "real = VWAP(high, low, close, volume)",
+      "notes": [],
+      "source_url": "https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html"
+    }
+  ],
+  "groups": {
+    "Cycle Indicators": [
+      "HT_DCPERIOD",
+      "HT_DCPHASE",
+      "HT_PHASOR",
+      "HT_SINE",
+      "HT_TRENDMODE"
+    ],
+    "Math Operators": [
+      "ADD",
+      "CUMSUM",
+      "DIV",
+      "MAX",
+      "MAXINDEX",
+      "MIN",
+      "MININDEX",
+      "MINMAX",
+      "MINMAXINDEX",
+      "MULT",
+      "SUB",
+      "SUM"
+    ],
+    "Math Transform": [
+      "ACOS",
+      "ASIN",
+      "ATAN",
+      "CEIL",
+      "COS",
+      "COSH",
+      "EXP",
+      "FLOOR",
+      "LN",
+      "LOG10",
+      "SIN",
+      "SINH",
+      "SQRT",
+      "TAN",
+      "TANH"
+    ],
+    "Momentum Indicators": [
+      "AC",
+      "ADX",
+      "ADXR",
+      "AO",
+      "APO",
+      "AROON",
+      "AROONOSC",
+      "BOP",
+      "CCI",
+      "CMO",
+      "CMOU",
+      "COPPOCK",
+      "DPO",
+      "DX",
+      "ER",
+      "ERI",
+      "FOSC",
+      "FRACTAL",
+      "IMI",
+      "KDJ",
+      "MACD",
+      "MACDEXT",
+      "MACDFIX",
+      "MFI",
+      "MINUS_DI",
+      "MINUS_DM",
+      "MOM",
+      "PLUS_DI",
+      "PLUS_DM",
+      "PPO",
+      "QSTICK",
+      "ROC",
+      "ROCP",
+      "ROCR",
+      "ROCR100",
+      "RSI",
+      "SMI",
+      "STOCH",
+      "STOCHF",
+      "STOCHRSI",
+      "TRIX",
+      "TSI",
+      "ULTOSC",
+      "VHF",
+      "VORTEX",
+      "WAD",
+      "WILLR"
+    ],
+    "Overlap Studies": [
+      "ACCBANDS",
+      "BBANDS",
+      "DEMA",
+      "DONCHIAN",
+      "EMA",
+      "HMA",
+      "HT_TRENDLINE",
+      "KAMA",
+      "KC",
+      "MA",
+      "MAMA",
+      "MAVP",
+      "MIDPOINT",
+      "MIDPRICE",
+      "RMA",
+      "SAR",
+      "SAREXT",
+      "SMA",
+      "SUPERTREND",
+      "T3",
+      "TEMA",
+      "TRIMA",
+      "VWMA",
+      "WMA",
+      "ZLEMA"
+    ],
+    "Pattern Recognition": [
+      "CDL2CROWS",
+      "CDL3BLACKCROWS",
+      "CDL3INSIDE",
+      "CDL3LINESTRIKE",
+      "CDL3OUTSIDE",
+      "CDL3STARSINSOUTH",
+      "CDL3WHITESOLDIERS",
+      "CDLABANDONEDBABY",
+      "CDLADVANCEBLOCK",
+      "CDLBELTHOLD",
+      "CDLBREAKAWAY",
+      "CDLCLOSINGMARUBOZU",
+      "CDLCONCEALBABYSWALL",
+      "CDLCOUNTERATTACK",
+      "CDLDARKCLOUDCOVER",
+      "CDLDOJI",
+      "CDLDOJISTAR",
+      "CDLDRAGONFLYDOJI",
+      "CDLENGULFING",
+      "CDLEVENINGDOJISTAR",
+      "CDLEVENINGSTAR",
+      "CDLGAPSIDESIDEWHITE",
+      "CDLGRAVESTONEDOJI",
+      "CDLHAMMER",
+      "CDLHANGINGMAN",
+      "CDLHARAMI",
+      "CDLHARAMICROSS",
+      "CDLHIGHWAVE",
+      "CDLHIKKAKE",
+      "CDLHIKKAKEMOD",
+      "CDLHOMINGPIGEON",
+      "CDLIDENTICAL3CROWS",
+      "CDLINNECK",
+      "CDLINVERTEDHAMMER",
+      "CDLKICKING",
+      "CDLKICKINGBYLENGTH",
+      "CDLLADDERBOTTOM",
+      "CDLLONGLEGGEDDOJI",
+      "CDLLONGLINE",
+      "CDLMARUBOZU",
+      "CDLMATCHINGLOW",
+      "CDLMATHOLD",
+      "CDLMORNINGDOJISTAR",
+      "CDLMORNINGSTAR",
+      "CDLONNECK",
+      "CDLPIERCING",
+      "CDLRICKSHAWMAN",
+      "CDLRISEFALL3METHODS",
+      "CDLSEPARATINGLINES",
+      "CDLSHOOTINGSTAR",
+      "CDLSHORTLINE",
+      "CDLSPINNINGTOP",
+      "CDLSTALLEDPATTERN",
+      "CDLSTICKSANDWICH",
+      "CDLTAKURI",
+      "CDLTASUKIGAP",
+      "CDLTHRUSTING",
+      "CDLTRISTAR",
+      "CDLUNIQUE3RIVER",
+      "CDLUPSIDEGAP2CROWS",
+      "CDLXSIDEGAP3METHODS"
+    ],
+    "Price Transform": [
+      "AVGDEV",
+      "AVGPRICE",
+      "HA",
+      "MEDPRICE",
+      "TYPPRICE",
+      "WCLPRICE"
+    ],
+    "Statistic Functions": [
+      "BETA",
+      "CORREL",
+      "LINEARREG",
+      "LINEARREG_ANGLE",
+      "LINEARREG_INTERCEPT",
+      "LINEARREG_SLOPE",
+      "PERCENTILE",
+      "PERCENTRANK",
+      "STDDEV",
+      "TSF",
+      "VAR"
+    ],
+    "Volatility Indicators": [
+      "ADR",
+      "ATR",
+      "CVI",
+      "MASSI",
+      "NATR",
+      "RVI",
+      "TRANGE"
+    ],
+    "Volume Indicators": [
+      "AD",
+      "ADOSC",
+      "CMF",
+      "EFI",
+      "MARKETFI",
+      "NVI",
+      "OBV",
+      "PVI",
+      "PVO",
+      "PVT",
+      "RVOL",
+      "VWAP"
+    ]
+  },
+  "ma_type": {},
+  "ta_func_flags": {
+    "1": "A period of 1 performs no smoothing",
+    "16777216": "Output scale same as input",
+    "33554432": "Function has a streaming API",
+    "67108864": "Output is over volume",
+    "134217728": "Function has an unstable period",
+    "268435456": "Output is a candlestick",
+    "536870912": "Output is path-dependent",
+    "1073741824": "Output can be NaN or infinite"
+  },
+  "ta_input_flags": {
+    "1": "open",
+    "2": "high",
+    "4": "low",
+    "8": "close",
+    "16": "volume",
+    "32": "openInterest",
+    "64": "timeStamp"
+  },
+  "ta_output_flags": {
+    "1": "Line",
+    "2": "Dotted Line",
+    "4": "Dashed Line",
+    "8": "Dot",
+    "16": "Histogram",
+    "32": "Pattern (Bool)",
+    "64": "Bull/Bear Pattern (Bearish < 0, Neutral = 0, Bullish > 0)",
+    "128": "Strength Pattern ([-200..-100] = Bearish, [-100..0] = Getting Bearish, 0 = Neutral, [0..100] = Getting Bullish, [100-200] = Bullish)",
+    "256": "Output can be positive",
+    "512": "Output can be negative",
+    "1024": "Output can be zero",
+    "2048": "Values represent an upper limit",
+    "4096": "Values represent a lower limit",
+    "8192": "Output is optional (nullable)"
+  }
+}

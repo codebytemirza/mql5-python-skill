@@ -1,0 +1,16 @@
+https://ta-lib.github.io/ta-lib-python/
+https://ta-lib.github.io/ta-lib-python/doc_index.html
+https://ta-lib.github.io/ta-lib-python/install.html
+https://ta-lib.github.io/ta-lib-python/abstract.html
+https://ta-lib.github.io/ta-lib-python/func_groups/overlap_studies.html
+https://ta-lib.github.io/ta-lib-python/func_groups/momentum_indicators.html
+https://ta-lib.github.io/ta-lib-python/func_groups/volume_indicators.html
+https://ta-lib.github.io/ta-lib-python/func_groups/volatility_indicators.html
+https://ta-lib.github.io/ta-lib-python/func_groups/price_transform.html
+https://ta-lib.github.io/ta-lib-python/func_groups/cycle_indicators.html
+https://ta-lib.github.io/ta-lib-python/func_groups/pattern_recognition.html
+https://ta-lib.github.io/ta-lib-python/func_groups/statistic_functions.html
+https://ta-lib.github.io/ta-lib-python/func_groups/math_transform.html
+https://ta-lib.github.io/ta-lib-python/func_groups/math_operators.html
+https://ta-lib.github.io/ta-lib-python/func.html
+https://ta-lib.github.io/ta-lib-python/funcs.html
