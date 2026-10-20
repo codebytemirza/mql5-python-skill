@@ -13,20 +13,24 @@ behaviour measured by running it.
 
 ```bash
 # both skills, into the current project
-npx skills add codebytemirza/mql5-python-skill
+npx skills add codebytemirza/mql5-python-skill --full-depth
 
 # just one of them
-npx skills add codebytemirza/mql5-python-skill --skill ta-lib-python
+npx skills add codebytemirza/mql5-python-skill --full-depth --skill ta-lib-python
 
 # pick the agent, install globally, no prompts
-npx skills add codebytemirza/mql5-python-skill -a opencode -g -y
+npx skills add codebytemirza/mql5-python-skill --full-depth -a opencode -g -y
 
 # see what is in the repo before installing
-npx skills add codebytemirza/mql5-python-skill --list
+npx skills add codebytemirza/mql5-python-skill --full-depth --list
 
 # copy instead of symlinking (Windows, or a shared install)
-npx skills add codebytemirza/mql5-python-skill -a opencode -g -y --copy
+npx skills add codebytemirza/mql5-python-skill --full-depth -a opencode -g -y --copy
 ```
+
+> **Use `--full-depth`.** Without it the CLI only finds the skill at the
+> repository root (`mql5-python`) and stops there. With `--full-depth` it
+> also finds the nested `skills/ta-lib-python/`.
 
 `skills` needs **Node.js 22.20 or later** and supports OpenCode, Claude Code,
 Codex, Cursor and 70+ other agents. It installs a canonical copy to
