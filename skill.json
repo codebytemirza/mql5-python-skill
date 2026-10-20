@@ -1,12 +1,25 @@
 {
   "name": "mql5-python",
   "version": "1.0.0",
-  "built": "2026-10-20T12:43:30+00:00",
+  "built": "2026-10-20T12:49:49+00:00",
   "package": "MetaTrader5",
   "package_version": "5.0.6231",
   "docs_section": "https://www.mql5.com/en/docs/python_metatrader5",
   "functions": 32,
   "constants": 223,
   "mirror_pages": 33,
-  "live_verified": true
+  "live_verified": true,
+  "skill_path": ".",
+  "skills_in_repo": [
+    {
+      "name": "mql5-python",
+      "path": ".",
+      "manifest": "skill.json"
+    },
+    {
+      "name": "ta-lib-python",
+      "path": "skills/ta-lib-python",
+      "manifest": "skills/ta-lib-python/skill.json"
+    }
+  ]
 }

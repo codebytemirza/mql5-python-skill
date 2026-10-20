@@ -9,17 +9,45 @@ behaviour measured by running it.
 | `mql5-python` | `MetaTrader5` | connect to a running MetaTrader 5 terminal, pull bars/ticks/depth, place and close orders |
 | `ta-lib-python` | `TA-Lib` | 201 technical-analysis functions: moving averages, momentum, volatility, volume, candlestick patterns, statistics |
 
+### Skills in this repository
+
+| skill name | path | manifest |
+| --- | --- | --- |
+| `mql5-python` | `.` (repository root) | `skill.json` |
+| `ta-lib-python` | `skills/ta-lib-python/` | `skills/ta-lib-python/skill.json` |
+
+Each skill's name is declared twice and the two must agree: in the
+`name:` field of its `SKILL.md` frontmatter and in its `skill.json`
+manifest. Both are checked by the verification script.
+
 ## Install
 
+This repository contains **two** skills: `mql5-python` at the root and
+`ta-lib-python` under `skills/`. The `skills` CLI only looks at the
+repository root by default, so **`--full-depth` is required** to see the
+nested one.
+
 ```bash
-# both skills, into the current project
+# repo install with --full-depth (installs both skills)
 npx skills add codebytemirza/mql5-python-skill --full-depth
 
-# just one of them
+# install a specific skill from this repo
+npx skills add codebytemirza/mql5-python-skill --full-depth --skill mql5-python
 npx skills add codebytemirza/mql5-python-skill --full-depth --skill ta-lib-python
 
-# pick the agent, install globally, no prompts
-npx skills add codebytemirza/mql5-python-skill --full-depth -a opencode -g -y
+# direct shorthand (repo@skill) - no --full-depth needed
+npx skills add codebytemirza/mql5-python-skill@mql5-python
+npx skills add codebytemirza/mql5-python-skill@ta-lib-python
+
+# global install (available across all projects)
+npx skills add codebytemirza/mql5-python-skill --full-depth -g
+
+# agent target install
+npx skills add codebytemirza/mql5-python-skill --full-depth -a opencode
+npx skills add codebytemirza/mql5-python-skill --full-depth -a claude-code
+
+# non-interactive install (CI/CD)
+npx skills add codebytemirza/mql5-python-skill --full-depth -y
 
 # see what is in the repo before installing
 npx skills add codebytemirza/mql5-python-skill --full-depth --list
@@ -28,9 +56,10 @@ npx skills add codebytemirza/mql5-python-skill --full-depth --list
 npx skills add codebytemirza/mql5-python-skill --full-depth -a opencode -g -y --copy
 ```
 
-> **Use `--full-depth`.** Without it the CLI only finds the skill at the
-> repository root (`mql5-python`) and stops there. With `--full-depth` it
-> also finds the nested `skills/ta-lib-python/`.
+> **Why `--full-depth`?** Without it the CLI finds only the skill at the
+> repository root (`mql5-python`) and stops there. With it, it also finds
+> `skills/ta-lib-python/`. The `repo@skill` shorthand addresses a nested
+> skill directly and does not need the flag.
 
 `skills` needs **Node.js 22.20 or later** and supports OpenCode, Claude Code,
 Codex, Cursor and 70+ other agents. It installs a canonical copy to
@@ -72,9 +101,7 @@ is BSD-2-Clause and fine to redistribute. See [NOTICE.md](NOTICE.md) and
 
 ```
 mql5-python-skill/          <- the mql5-python skill (root)
-  SKILL.md
-  README.md
-  NOTICE.md  LICENSE  skill.json
+  SKILL.md  README.md  NOTICE.md  LICENSE  skill.json
   references/    quickstart, api, cookbook, trading, constants,
                  troubleshooting, live, overview
   references/mirror/  the 33-page official documentation mirror
@@ -83,7 +110,7 @@ mql5-python-skill/          <- the mql5-python skill (root)
 
 skills/
   ta-lib-python/      <- the ta-lib-python skill
-    SKILL.md  README.md  NOTICE.md
+    SKILL.md  README.md  NOTICE.md  skill.json
     references/       quickstart, api, functions, constants,
                      troubleshooting, cookbook, live
     references/mirror/ the 16-page official documentation mirror

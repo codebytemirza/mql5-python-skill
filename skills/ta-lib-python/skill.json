@@ -1,0 +1,12 @@
+{
+  "name": "ta-lib-python",
+  "version": "1.0.0",
+  "built": "2026-10-20T12:50:00+00:00",
+  "package": "TA-Lib",
+  "package_version": "0.8.2",
+  "docs_site": "https://ta-lib.github.io/ta-lib-python/",
+  "functions": 201,
+  "groups": 10,
+  "mirror_pages": 16,
+  "skill_path": "skills/ta-lib-python"
+}
