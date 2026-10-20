@@ -33,9 +33,17 @@ else
   gh repo create "$SLUG" --"$VISIBILITY" --description \
     "Agent skill for the MetaTrader5 Python package: verified MQL5 docs mirror, API reference, cookbook and live-measured behaviour" \
     --source . --remote origin --push
+  gh repo edit "$SLUG" --add-topic metatrader5 --add-topic mt5 \
+    --add-topic python --add-topic trading --add-topic agent-skill \
+    --add-topic llm --add-topic opencode --add-topic documentation \
+    --add-topic mql5 2>/dev/null || true
   echo "created and pushed $SLUG"
   exit 0
 fi
 
 git push -u origin main
+gh repo edit "$SLUG" --add-topic metatrader5 --add-topic mt5 \
+  --add-topic python --add-topic trading --add-topic agent-skill \
+  --add-topic llm --add-topic opencode --add-topic documentation \
+  --add-topic mql5 2>/dev/null || true
 echo "pushed to $SLUG"
