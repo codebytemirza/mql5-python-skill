@@ -6,14 +6,32 @@ traps that only show up when you run it against a live terminal.
 
 ## Install
 
-Copy the folder into your agent's skills directory and restart the agent.
+The skill is published as a standard agent skill, so it installs with the
+`skills` CLI (Node.js 22.20+):
+
+```bash
+# install into the current project
+npx skills add codebytemirza/mql5-python-skill
+
+# pick the agent, install globally, no prompts
+npx skills add codebytemirza/mql5-python-skill -a opencode -g -y
+
+# see what is in the repo before installing
+npx skills add codebytemirza/mql5-python-skill --list
+
+# copy instead of symlinking (Windows, or a shared install)
+npx skills add codebytemirza/mql5-python-skill -a opencode -g -y --copy
+```
+
+`skills` supports OpenCode, Claude Code, Codex, Cursor and 70+ other
+agents. It installs to `~/.agents/skills/mql5-python` and links or copies
+it into each agent's skills directory.
+
+Without the CLI, copy the folder yourself:
 
 ```powershell
-# opencode / claude-style agents
-Copy-Item -Recurse mql5-python "$HOME\.config\opencode\skills\mql5-python"
-
-# or, for agents that read ~/.agents/skills
 Copy-Item -Recurse mql5-python "$HOME\.agents\skills\mql5-python"
+Copy-Item -Recurse mql5-python "$HOME\.config\opencode\skills\mql5-python"
 ```
 
 Then ask the agent for something like *"write a script that pulls EURUSD
