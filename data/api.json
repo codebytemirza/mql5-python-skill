@@ -1,0 +1,2676 @@
+{
+  "package": "MetaTrader5",
+  "version": "5.0.6231",
+  "author": "MetaQuotes Ltd.",
+  "docs_section": "https://www.mql5.com/en/docs/python_metatrader5",
+  "requirements": {
+    "os": "Windows",
+    "terminal": "MetaTrader 5 terminal installed and running",
+    "notes": "The package is a thin IPC client; without a running terminal initialize() returns False and last_error() is (-6, 'Terminal: Authorization failed')."
+  },
+  "functions": [
+    {
+      "name": "initialize",
+      "group": "Connection & session",
+      "summary": "Establish a connection with the MetaTrader 5 terminal.",
+      "signatures": [
+        "initialize()",
+        "initialize(\n   path                      // path to the MetaTrader 5 terminal EXE file\n   )",
+        "initialize(\n   path,                     // path to the MetaTrader 5 terminal EXE file\n   login=LOGIN,              // account number\n   password=\"PASSWORD\",      // password\n   server=\"SERVER\",          // server name as it is specified in the terminal\n   timeout=TIMEOUT,          // timeout\n   portable=False            // portable mode\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "path",
+          "value_form": "—",
+          "description": "[in] Path to the metatrader.exe or metatrader64.exe file. Optional unnamed parameter. It is indicated first without a parameter name. If the path is not specified, the module attempts to find the executable file on its own."
+        },
+        {
+          "name": "login=LOGIN",
+          "value_form": "`LOGIN`",
+          "description": "[in] Trading account number. Optional named parameter. If not specified, the last trading account is used."
+        },
+        {
+          "name": "password=\"PASSWORD\"",
+          "value_form": "`\"PASSWORD\"`",
+          "description": "[in] Trading account password. Optional named parameter. If the password is not set, the password for a specified trading account saved in the terminal database is applied automatically."
+        },
+        {
+          "name": "server=\"SERVER\"",
+          "value_form": "`\"SERVER\"`",
+          "description": "[in] Trade server name. Optional named parameter. If the server is not set, the server for a specified trading account saved in the terminal database is applied automatically."
+        },
+        {
+          "name": "timeout=TIMEOUT",
+          "value_form": "`TIMEOUT`",
+          "description": "[in] Connection timeout in milliseconds. Optional named parameter. If not specified, the value of 60 000 (60 seconds) is applied."
+        },
+        {
+          "name": "portable=False",
+          "value_form": "`False`",
+          "description": "[in] Flag of the terminal launch in [portable](https://www.metatrader5.com/en/terminal/help/start_advanced/start#portable) mode. Optional named parameter. If not specified, the value of False is used."
+        }
+      ],
+      "returns": "Returns True in case of successful connection to the MetaTrader 5 terminal, otherwise - False.",
+      "notes": [
+        "If required, the MetaTrader 5 terminal is launched to establish connection when executing the initialize() call."
+      ],
+      "see_also": [
+        {
+          "text": "shutdown",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5shutdown_py"
+        },
+        {
+          "text": "terminal_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5terminalinfo_py"
+        },
+        {
+          "text": "version",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5version_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5initialize_py",
+      "mirror_file": "references/mirror/pages/mt5initialize_py.md"
+    },
+    {
+      "name": "login",
+      "group": "Connection & session",
+      "summary": "Connect to a trading account using specified parameters.",
+      "signatures": [
+        "login(\n   login,                    // account number\n   password=\"PASSWORD\",      // password\n   server=\"SERVER\",          // server name as it is specified in the terminal\n   timeout=TIMEOUT           // timeout\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "login",
+          "value_form": "—",
+          "description": "[in] Trading account number. Required unnamed parameter."
+        },
+        {
+          "name": "password",
+          "value_form": "—",
+          "description": "[in] Trading account password. Optional named parameter. If the password is not set, the password saved in the terminal database is applied automatically."
+        },
+        {
+          "name": "server",
+          "value_form": "—",
+          "description": "[in] Trade server name. Optional named parameter. If no server is set, the last used server is applied automatically."
+        },
+        {
+          "name": "timeout=TIMEOUT",
+          "value_form": "`TIMEOUT`",
+          "description": "[in] Connection timeout in milliseconds. Optional named parameter. If not specified, the value of 60 000 (60 seconds) is applied. If the connection is not established within the specified time, the call is forcibly terminated and the exception is generated."
+        }
+      ],
+      "returns": "True in case of a successful connection to the trade account, otherwise – False.",
+      "notes": [],
+      "see_also": [
+        {
+          "text": "initialize",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5initialize_py"
+        },
+        {
+          "text": "shutdown",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5shutdown_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5login_py",
+      "mirror_file": "references/mirror/pages/mt5login_py.md"
+    },
+    {
+      "name": "shutdown",
+      "group": "Connection & session",
+      "summary": "Close the previously established connection to the MetaTrader 5 terminal.",
+      "signatures": [
+        "shutdown()"
+      ],
+      "parameters": [],
+      "returns": "None.",
+      "notes": [],
+      "see_also": [
+        {
+          "text": "initialize",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5initialize_py"
+        },
+        {
+          "text": "login_py",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5login_py"
+        },
+        {
+          "text": "terminal_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5terminalinfo_py"
+        },
+        {
+          "text": "version",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5version_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5shutdown_py",
+      "mirror_file": "references/mirror/pages/mt5shutdown_py.md"
+    },
+    {
+      "name": "version",
+      "group": "Connection & session",
+      "summary": "Return the MetaTrader 5 terminal version.",
+      "signatures": [
+        "version()"
+      ],
+      "parameters": [],
+      "returns": "Return the MetaTrader 5 terminal version, build and release date. Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The version() function returns the terminal version, build and release date as a tuple of three values:"
+      ],
+      "see_also": [
+        {
+          "text": "initialize",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5initialize_py"
+        },
+        {
+          "text": "shutdown",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5shutdown_py"
+        },
+        {
+          "text": "terminal_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5terminalinfo_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5version_py",
+      "mirror_file": "references/mirror/pages/mt5version_py.md"
+    },
+    {
+      "name": "last_error",
+      "group": "Connection & session",
+      "summary": "Return data on the last error.",
+      "signatures": [
+        "last_error()"
+      ],
+      "parameters": [],
+      "returns": "Return the last error code and description as a tuple.",
+      "notes": [
+        "last_error() allows obtaining an error code in case of a failed execution of a MetaTrader 5 library function. It is similar to [GetLastError()](https://www.mql5.com/en/docs/check/getlasterror). However, it applies its own error codes. Possible values:"
+      ],
+      "see_also": [
+        {
+          "text": "version",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5version_py"
+        },
+        {
+          "text": "GetLastError",
+          "url": "https://www.mql5.com/en/docs/check/getlasterror"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py",
+      "mirror_file": "references/mirror/pages/mt5lasterror_py.md"
+    },
+    {
+      "name": "account_info",
+      "group": "Account & terminal",
+      "summary": "Get info on the current trading account.",
+      "signatures": [
+        "account_info()"
+      ],
+      "parameters": [],
+      "returns": "Return info in the form of a named tuple structure (namedtuple). Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function returns all data that can be obtained using [AccountInfoInteger](https://www.mql5.com/en/docs/account/accountinfointeger), [AccountInfoDouble](https://www.mql5.com/en/docs/account/accountinfodouble) and [AccountInfoString](https://www.mql5.com/en/docs/account/accountinfostring) in one call."
+      ],
+      "see_also": [
+        {
+          "text": "initialize",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5initialize_py"
+        },
+        {
+          "text": "shutdown",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5shutdown_py"
+        },
+        {
+          "text": "login",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5login_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5accountinfo_py",
+      "mirror_file": "references/mirror/pages/mt5accountinfo_py.md"
+    },
+    {
+      "name": "terminal_info",
+      "group": "Account & terminal",
+      "summary": "Get the connected MetaTrader 5 client terminal status and settings.",
+      "signatures": [
+        "terminal_info()"
+      ],
+      "parameters": [],
+      "returns": "Return info in the form of a named tuple structure (namedtuple). Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function returns all data that can be obtained using [TerminalInfoInteger](https://www.mql5.com/en/docs/check/terminalinfointeger), [TerminalInfoDouble](https://www.mql5.com/en/docs/check/terminalinfodouble) and [TerminalInfoDouble](https://www.mql5.com/en/docs/check/terminalinfodouble) in one call."
+      ],
+      "see_also": [
+        {
+          "text": "initialize",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5initialize_py"
+        },
+        {
+          "text": "shutdown",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5shutdown_py"
+        },
+        {
+          "text": "version",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5version_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5terminalinfo_py",
+      "mirror_file": "references/mirror/pages/mt5terminalinfo_py.md"
+    },
+    {
+      "name": "symbols_total",
+      "group": "Symbols",
+      "summary": "Get the number of all financial instruments in the MetaTrader 5 terminal.",
+      "signatures": [
+        "symbols_total()"
+      ],
+      "parameters": [],
+      "returns": "Integer value.",
+      "notes": [
+        "The function is similar to [SymbolsTotal()](https://www.mql5.com/en/docs/marketinformation/symbolstotal). However, it returns the number of all symbols including [custom](https://www.mql5.com/en/docs/customsymbols) ones and the ones disabled in [MarketWatch](https://www.metatrader5.com/en/terminal/help/trading/market_watch)."
+      ],
+      "see_also": [
+        {
+          "text": "symbols_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolsget_py"
+        },
+        {
+          "text": "symbol_select",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolselect_py"
+        },
+        {
+          "text": "symbol_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfo_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolstotal_py",
+      "mirror_file": "references/mirror/pages/mt5symbolstotal_py.md"
+    },
+    {
+      "name": "symbols_get",
+      "group": "Symbols",
+      "summary": "Get all financial instruments from the MetaTrader 5 terminal.",
+      "signatures": [
+        "symbols_get(\n   group=\"GROUP\"      // symbol selection filter\n)"
+      ],
+      "parameters": [
+        {
+          "name": "group=\"GROUP\"",
+          "value_form": "`\"GROUP\"`",
+          "description": "[in] The filter for arranging a group of necessary symbols. Optional parameter. If the group is specified, the function returns only symbols meeting a specified criteria."
+        }
+      ],
+      "returns": "Return symbols in the form of a tuple. Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The group parameter allows sorting out symbols by name. '*' can be used at the beginning and the end of a string.",
+        "The group parameter can be used as a named or an unnamed one. Both options work the same way. The named option (group=\"GROUP\") makes the code easier to read.",
+        "The group parameter may contain several comma separated conditions. A condition can be set as a mask using '*'. The logical negation symbol '!' can be used for an exclusion. All conditions are applied sequentially, which means conditions of including to a group should be specified first followed by an exclusion condition. For example, group=\"*, !EUR\" means that all symbols should be selected first and the ones containing \"EUR\" in their names should be excluded afterwards.",
+        "Unlike [symbol_info()](https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfo_py), the symbols_get() function returns data on all requested symbols within a single call."
+      ],
+      "see_also": [
+        {
+          "text": "symbols_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolstotal_py"
+        },
+        {
+          "text": "symbol_select",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolselect_py"
+        },
+        {
+          "text": "symbol_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfo_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolsget_py",
+      "mirror_file": "references/mirror/pages/mt5symbolsget_py.md"
+    },
+    {
+      "name": "symbol_info",
+      "group": "Symbols",
+      "summary": "Get data on the specified financial instrument.",
+      "signatures": [
+        "symbol_info(\n   symbol      // financial instrument name\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        }
+      ],
+      "returns": "Return info in the form of a named tuple structure (namedtuple). Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function returns all data that can be obtained using [SymbolInfoInteger](https://www.mql5.com/en/docs/marketinformation/symbolinfointeger), [SymbolInfoDouble](https://www.mql5.com/en/docs/marketinformation/symbolinfodouble) and [SymbolInfoString](https://www.mql5.com/en/docs/marketinformation/symbolinfostring) in one call."
+      ],
+      "see_also": [
+        {
+          "text": "account_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5accountinfo_py"
+        },
+        {
+          "text": "terminal_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5terminalinfo_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfo_py",
+      "mirror_file": "references/mirror/pages/mt5symbolinfo_py.md"
+    },
+    {
+      "name": "symbol_info_tick",
+      "group": "Symbols",
+      "summary": "Get the last tick for the specified financial instrument.",
+      "signatures": [
+        "symbol_info_tick(\n   symbol      // financial instrument name\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        }
+      ],
+      "returns": "Return info in the form of a tuple. Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function is similar to [SymbolInfoTick](https://www.mql5.com/en/docs/marketinformation/symbolinfotick)."
+      ],
+      "see_also": [
+        {
+          "text": "symbol_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfo_py"
+        },
+        {
+          "text": "symbol_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfo_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfotick_py",
+      "mirror_file": "references/mirror/pages/mt5symbolinfotick_py.md"
+    },
+    {
+      "name": "symbol_select",
+      "group": "Symbols",
+      "summary": "Select a symbol in the [MarketWatch](https://www.metatrader5.com/en/terminal/help/trading/market_watch) window or remove a symbol from the window.",
+      "signatures": [
+        "symbol_select(\n   symbol,      // financial instrument name\n   enable=None  // enable or disable\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        },
+        {
+          "name": "enable",
+          "value_form": "—",
+          "description": "[in] Switch. Optional unnamed parameter. If 'false', a symbol should be removed from the MarketWatch window. Otherwise, it should be selected in the MarketWatch window. A symbol cannot be removed if open charts with this symbol are currently present or positions are opened on it."
+        }
+      ],
+      "returns": "True if successful, otherwise – False.",
+      "notes": [
+        "The function is similar to [SymbolSelect](https://www.mql5.com/en/docs/marketinformation/symbolselect)."
+      ],
+      "see_also": [
+        {
+          "text": "symbol_info",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolinfo_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5symbolselect_py",
+      "mirror_file": "references/mirror/pages/mt5symbolselect_py.md"
+    },
+    {
+      "name": "market_book_add",
+      "group": "Market depth",
+      "summary": "Subscribes the MetaTrader 5 terminal to the Market Depth change events for a specified symbol.",
+      "signatures": [
+        "market_book_add(\n   symbol      // financial instrument name\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        }
+      ],
+      "returns": "True if successful, otherwise – False.",
+      "notes": [
+        "The function is similar to [MarketBookAdd](https://www.mql5.com/en/docs/marketinformation/marketbookadd)."
+      ],
+      "see_also": [
+        {
+          "text": "market_book_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookget_py"
+        },
+        {
+          "text": "market_book_release",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookrelease_py"
+        },
+        {
+          "text": "Market Depth structure",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqlbookinfo"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookadd_py",
+      "mirror_file": "references/mirror/pages/mt5marketbookadd_py.md"
+    },
+    {
+      "name": "market_book_get",
+      "group": "Market depth",
+      "summary": "Returns a tuple from BookInfo featuring Market Depth entries for the specified symbol.",
+      "signatures": [
+        "market_book_get(\n   symbol      // financial instrument name\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        }
+      ],
+      "returns": "Returns the Market Depth content as a tuple from BookInfo entries featuring order type, price and volume in lots. BookInfo is similar to the [MqlBookInfo](https://www.mql5.com/en/docs/constants/structures/mqlbookinfo) structure. Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The subscription to the Market Depth change events should be preliminarily performed using the [market_book_add()](https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookadd_py) function.",
+        "The function is similar to [MarketBookGet](https://www.mql5.com/en/docs/marketinformation/marketbookget)."
+      ],
+      "see_also": [
+        {
+          "text": "market_book_add",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookadd_py"
+        },
+        {
+          "text": "market_book_release",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookrelease_py"
+        },
+        {
+          "text": "Market Depth structure",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqlbookinfo"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookget_py",
+      "mirror_file": "references/mirror/pages/mt5marketbookget_py.md"
+    },
+    {
+      "name": "market_book_release",
+      "group": "Market depth",
+      "summary": "Cancels subscription of the MetaTrader 5 terminal to the Market Depth change events for a specified symbol.",
+      "signatures": [
+        "market_book_release(\n   symbol      // financial instrument name\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        }
+      ],
+      "returns": "True if successful, otherwise – False.",
+      "notes": [
+        "The function is similar to [MarketBookRelease](https://www.mql5.com/en/docs/marketinformation/marketbookrelease)."
+      ],
+      "see_also": [
+        {
+          "text": "market_book_add",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookadd_py"
+        },
+        {
+          "text": "market_book_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookget_py"
+        },
+        {
+          "text": "Market Depth structure",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqlbookinfo"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5marketbookrelease_py",
+      "mirror_file": "references/mirror/pages/mt5marketbookrelease_py.md"
+    },
+    {
+      "name": "copy_rates_from",
+      "group": "Bars (rates)",
+      "summary": "Get bars from the MetaTrader 5 terminal starting from the specified date.",
+      "signatures": [
+        "copy_rates_from(\n   symbol,       // symbol name\n   timeframe,    // timeframe\n   date_from,    // initial bar open date\n   count         // number of bars\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name, for example, \"EURUSD\". Required unnamed parameter."
+        },
+        {
+          "name": "timeframe",
+          "value_form": "—",
+          "description": "[in] Timeframe the bars are requested for. Set by a value from the [TIMEFRAME](https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrom_py#timeframe) enumeration. Required unnamed parameter."
+        },
+        {
+          "name": "date_from",
+          "value_form": "—",
+          "description": "[in] Date of opening of the first bar from the requested sample. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        },
+        {
+          "name": "count",
+          "value_form": "—",
+          "description": "[in] Number of bars to receive. Required unnamed parameter."
+        }
+      ],
+      "returns": "Returns bars as the numpy array with the named time, open, high, low, close, tick_volume, spread and real_volume columns. Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "See the [CopyRates()](https://www.mql5.com/en/docs/series/copyrates) function for more information.",
+        "Only data whose date is less than (earlier) or equal to the date specified will be returned. It means, the open time of any bar is always less or equal to the specified one.",
+        "MetaTrader 5 terminal provides bars only within a history available to a user on charts. The number of bars available to users is set in the \"[Max. bars in chart](https://www.metatrader5.com/en/terminal/help/startworking/settings#max_bars)\" parameter.",
+        "When creating the 'datetime' object, Python uses the local time zone, while MetaTrader 5 stores tick and bar open time in UTC time zone (without the shift). Therefore, 'datetime' should be created in UTC time for executing functions that use time. Data received from the MetaTrader 5 terminal has UTC time.",
+        "TIMEFRAME is an enumeration with possible chart period values"
+      ],
+      "see_also": [
+        {
+          "text": "CopyRates",
+          "url": "https://www.mql5.com/en/docs/series/copyrates"
+        },
+        {
+          "text": "copy_rates_from_pos",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrompos_py"
+        },
+        {
+          "text": "copy_rates_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+        },
+        {
+          "text": "copy_ticks_from",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py"
+        },
+        {
+          "text": "copy_ticks_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrom_py",
+      "mirror_file": "references/mirror/pages/mt5copyratesfrom_py.md"
+    },
+    {
+      "name": "copy_rates_from_pos",
+      "group": "Bars (rates)",
+      "summary": "Get bars from the MetaTrader 5 terminal starting from the specified index.",
+      "signatures": [
+        "copy_rates_from_pos(\n   symbol,       // symbol name\n   timeframe,    // timeframe\n   start_pos,    // initial bar index\n   count         // number of bars\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name, for example, \"EURUSD\". Required unnamed parameter."
+        },
+        {
+          "name": "timeframe",
+          "value_form": "—",
+          "description": "[in] Timeframe the bars are requested for. Set by a value from the [TIMEFRAME](https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrom_py#timeframe) enumeration. Required unnamed parameter."
+        },
+        {
+          "name": "start_pos",
+          "value_form": "—",
+          "description": "[in] Initial index of the bar the data are requested from. The numbering of bars goes from present to past. Thus, the zero bar means the current one. Required unnamed parameter."
+        },
+        {
+          "name": "count",
+          "value_form": "—",
+          "description": "[in] Number of bars to receive. Required unnamed parameter."
+        }
+      ],
+      "returns": "Returns bars as the numpy array with the named time, open, high, low, close, tick_volume, spread and real_volume columns. Returns None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "See the [CopyRates()](https://www.mql5.com/en/docs/series/copyrates) function for more information.",
+        "MetaTrader 5 terminal provides bars only within a history available to a user on charts. The number of bars available to users is set in the \"[Max. bars in chart](https://www.metatrader5.com/en/terminal/help/startworking/settings#max_bars)\" parameter."
+      ],
+      "see_also": [
+        {
+          "text": "CopyRates",
+          "url": "https://www.mql5.com/en/docs/series/copyrates"
+        },
+        {
+          "text": "copy_rates_from",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrom_py"
+        },
+        {
+          "text": "copy_rates_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+        },
+        {
+          "text": "copy_ticks_from",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py"
+        },
+        {
+          "text": "copy_ticks_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrompos_py",
+      "mirror_file": "references/mirror/pages/mt5copyratesfrompos_py.md"
+    },
+    {
+      "name": "copy_rates_range",
+      "group": "Bars (rates)",
+      "summary": "Get bars in the specified date range from the MetaTrader 5 terminal.",
+      "signatures": [
+        "copy_rates_range(\n   symbol,       // symbol name\n   timeframe,    // timeframe\n   date_from,    // date the bars are requested from\n   date_to       // date, up to which the bars are requested\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name, for example, \"EURUSD\". Required unnamed parameter."
+        },
+        {
+          "name": "timeframe",
+          "value_form": "—",
+          "description": "[in] Timeframe the bars are requested for. Set by a value from the [TIMEFRAME](https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrom_py#timeframe) enumeration. Required unnamed parameter."
+        },
+        {
+          "name": "date_from",
+          "value_form": "—",
+          "description": "[in] Date the bars are requested from. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Bars with the open time >= date_from are returned. Required unnamed parameter."
+        },
+        {
+          "name": "date_to",
+          "value_form": "—",
+          "description": "[in] Date, up to which the bars are requested. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Bars with the open time <= date_to are returned. Required unnamed parameter."
+        }
+      ],
+      "returns": "Returns bars as the numpy array with the named time, open, high, low, close, tick_volume, spread and real_volume columns. Returns None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "See the [CopyRates()](https://www.mql5.com/en/docs/series/copyrates) function for more information.",
+        "MetaTrader 5 terminal provides bars only within a history available to a user on charts. The number of bars available to users is set in the \"[Max. bars in chart](https://www.metatrader5.com/en/terminal/help/startworking/settings#max_bars)\" parameter.",
+        "When creating the 'datetime' object, Python uses the local time zone, while MetaTrader 5 stores tick and bar open time in UTC time zone (without the shift). Therefore, 'datetime' should be created in UTC time for executing functions that use time. Data received from the MetaTrader 5 terminal has UTC time."
+      ],
+      "see_also": [
+        {
+          "text": "CopyRates",
+          "url": "https://www.mql5.com/en/docs/series/copyrates"
+        },
+        {
+          "text": "copy_rates_from",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrom_py"
+        },
+        {
+          "text": "copy_rates_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+        },
+        {
+          "text": "copy_ticks_from",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py"
+        },
+        {
+          "text": "copy_ticks_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py",
+      "mirror_file": "references/mirror/pages/mt5copyratesrange_py.md"
+    },
+    {
+      "name": "copy_ticks_from",
+      "group": "Ticks",
+      "summary": "Get ticks from the MetaTrader 5 terminal starting from the specified date.",
+      "signatures": [
+        "copy_ticks_from(\n   symbol,       // symbol name\n   date_from,    // date the ticks are requested from\n   count,        // number of requested ticks\n   flags         // combination of flags defining the type of requested ticks\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name, for example, \"EURUSD\". Required unnamed parameter."
+        },
+        {
+          "name": "from",
+          "value_form": "—",
+          "description": "[in] Date the ticks are requested from. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        },
+        {
+          "name": "count",
+          "value_form": "—",
+          "description": "[in] Number of ticks to receive. Required unnamed parameter."
+        },
+        {
+          "name": "flags",
+          "value_form": "—",
+          "description": "[in] A flag to define the type of the requested ticks. COPY_TICKS_INFO – ticks with Bid and/or Ask changes, COPY_TICKS_TRADE – ticks with changes in Last and Volume, COPY_TICKS_ALL – all ticks. Flag values are described in the [COPY_TICKS](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py#copy_ticks) enumeration. Required unnamed parameter."
+        }
+      ],
+      "returns": "Returns ticks as the numpy array with the named time, bid, ask, last and flags columns. The 'flags' value can be a combination of flags from the [TICK_FLAG](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py#tick_flag) enumeration. Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "See the [CopyTicks](https://www.mql5.com/en/docs/series/copyticks) function for more information.",
+        "When creating the 'datetime' object, Python uses the local time zone, while MetaTrader 5 stores tick and bar open time in UTC time zone (without the shift). Therefore, 'datetime' should be created in UTC time for executing functions that use time. Data received from the MetaTrader 5 terminal has UTC time.",
+        "COPY_TICKS defines the types of ticks that can be requested using the [copy_ticks_from()](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py) and [copy_ticks_range()](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py) functions.",
+        "TICK_FLAG defines possible flags for ticks. These flags are used to describe ticks obtained by the [copy_ticks_from()](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py) and [copy_ticks_range()](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py) functions."
+      ],
+      "see_also": [
+        {
+          "text": "CopyRates",
+          "url": "https://www.mql5.com/en/docs/series/copyrates"
+        },
+        {
+          "text": "copy_rates_from_pos",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrompos_py"
+        },
+        {
+          "text": "copy_rates_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+        },
+        {
+          "text": "copy_ticks_from",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py"
+        },
+        {
+          "text": "copy_ticks_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py",
+      "mirror_file": "references/mirror/pages/mt5copyticksfrom_py.md"
+    },
+    {
+      "name": "copy_ticks_range",
+      "group": "Ticks",
+      "summary": "Get ticks for the specified date range from the MetaTrader 5 terminal.",
+      "signatures": [
+        "copy_ticks_range(\n   symbol,       // symbol name\n   date_from,    // date the ticks are requested from\n   date_to,      // date, up to which the ticks are requested\n   flags         // combination of flags defining the type of requested ticks\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name, for example, \"EURUSD\". Required unnamed parameter."
+        },
+        {
+          "name": "date_from",
+          "value_form": "—",
+          "description": "[in] Date the ticks are requested from. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        },
+        {
+          "name": "date_to",
+          "value_form": "—",
+          "description": "[in] Date, up to which the ticks are requested. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        },
+        {
+          "name": "flags",
+          "value_form": "—",
+          "description": "[in] A flag to define the type of the requested ticks. COPY_TICKS_INFO – ticks with Bid and/or Ask changes, COPY_TICKS_TRADE – ticks with changes in Last and Volume, COPY_TICKS_ALL – all ticks. Flag values are described in the [COPY_TICKS](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py#copy_ticks) enumeration. Required unnamed parameter."
+        }
+      ],
+      "returns": "Returns ticks as the numpy array with the named time, bid, ask, last and flags columns. The 'flags' value can be a combination of flags from the [TICK_FLAG](https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py#tick_flag) enumeration. Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "See the [CopyTicks](https://www.mql5.com/en/docs/series/copyticks) function for more information.",
+        "When creating the 'datetime' object, Python uses the local time zone, while MetaTrader 5 stores tick and bar open time in UTC time zone (without the shift). Therefore, 'datetime' should be created in UTC time for executing functions that use time. The data obtained from MetaTrader 5 have UTC time, but Python applies the local time shift again when trying to print them. Thus, the obtained data should also be corrected for visual presentation."
+      ],
+      "see_also": [
+        {
+          "text": "CopyRates",
+          "url": "https://www.mql5.com/en/docs/series/copyrates"
+        },
+        {
+          "text": "copy_rates_from_pos",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesfrompos_py"
+        },
+        {
+          "text": "copy_rates_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+        },
+        {
+          "text": "copy_ticks_from",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksfrom_py"
+        },
+        {
+          "text": "copy_ticks_range",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py",
+      "mirror_file": "references/mirror/pages/mt5copyticksrange_py.md"
+    },
+    {
+      "name": "orders_total",
+      "group": "Active orders",
+      "summary": "Get the number of active orders.",
+      "signatures": [
+        "orders_total()"
+      ],
+      "parameters": [],
+      "returns": "Integer value.",
+      "notes": [
+        "The function is similar to [OrdersTotal](https://www.mql5.com/en/docs/trading/orderstotal)."
+      ],
+      "see_also": [
+        {
+          "text": "orders_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordersget_py"
+        },
+        {
+          "text": "positions_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5positionstotal_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5orderstotal_py",
+      "mirror_file": "references/mirror/pages/mt5orderstotal_py.md"
+    },
+    {
+      "name": "orders_get",
+      "group": "Active orders",
+      "summary": "Get active orders with the ability to filter by symbol or ticket.",
+      "signatures": [
+        "orders_get()",
+        "orders_get(\n   symbol=\"SYMBOL\"      // symbol name\n)",
+        "orders_get(\n   group=\"GROUP\"        // filter for selecting orders for symbols\n)",
+        "orders_get(\n   ticket=TICKET        // ticket\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol=\"SYMBOL\"",
+          "value_form": "`\"SYMBOL\"`",
+          "description": "[in] Symbol name. Optional named parameter. If a symbol is specified, the ticket parameter is ignored."
+        },
+        {
+          "name": "group=\"GROUP\"",
+          "value_form": "`\"GROUP\"`",
+          "description": "[in] The filter for arranging a group of necessary symbols. Optional named parameter. If the group is specified, the function returns only active orders meeting a specified criteria for a symbol name."
+        },
+        {
+          "name": "ticket=TICKET",
+          "value_form": "`TICKET`",
+          "description": "[in] Order ticket ([ORDER_TICKET](https://www.mql5.com/en/docs/constants/tradingconstants/orderproperties#enum_order_property_integer)). Optional named parameter."
+        }
+      ],
+      "returns": "Return info in the form of a named tuple structure (namedtuple). Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function allows receiving all active orders within one call similar to the [OrdersTotal](https://www.mql5.com/en/docs/trading/orderstotal) and [OrderSelect](https://www.mql5.com/en/docs/trading/orderselect) tandem.",
+        "The group parameter allows sorting out orders by symbols. '*' can be used at the beginning and the end of a string.",
+        "The group parameter may contain several comma separated conditions. A condition can be set as a mask using '*'. The logical negation symbol '!' can be used for an exclusion. All conditions are applied sequentially, which means conditions of including to a group should be specified first followed by an exclusion condition. For example, group=\"*, !EUR\" means that orders for all symbols should be selected first and the ones containing \"EUR\" in symbol names should be excluded afterwards."
+      ],
+      "see_also": [
+        {
+          "text": "orders_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5orderstotal_py"
+        },
+        {
+          "text": "positions_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5positionsget_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordersget_py",
+      "mirror_file": "references/mirror/pages/mt5ordersget_py.md"
+    },
+    {
+      "name": "order_calc_margin",
+      "group": "Order maths & execution",
+      "summary": "Return margin in the account currency to perform a specified trading operation.",
+      "signatures": [
+        "order_calc_margin(\n   action,      // order type (ORDER_TYPE_BUY or ORDER_TYPE_SELL)\n   symbol,      // symbol name\n   volume,      // volume\n   price        // open price\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "action",
+          "value_form": "—",
+          "description": "[in] Order type taking values from the [ORDER_TYPE](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercalcmargin_py#order_type) enumeration. Required unnamed parameter."
+        },
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        },
+        {
+          "name": "volume",
+          "value_form": "—",
+          "description": "[in] Trading operation volume. Required unnamed parameter."
+        },
+        {
+          "name": "price",
+          "value_form": "—",
+          "description": "[in] Open price. Required unnamed parameter."
+        }
+      ],
+      "returns": "Real value if successful, otherwise None. The error info can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function allows estimating the margin necessary for a specified order type on the current account and in the current market environment without considering the current pending orders and open positions. The function is similar to [OrderCalcMargin](https://www.mql5.com/en/docs/trading/ordercalcmargin).",
+        "ORDER_TYPE"
+      ],
+      "see_also": [
+        {
+          "text": "order_calc_profit",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercalcprofit_py"
+        },
+        {
+          "text": "order_check",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercalcmargin_py",
+      "mirror_file": "references/mirror/pages/mt5ordercalcmargin_py.md"
+    },
+    {
+      "name": "order_calc_profit",
+      "group": "Order maths & execution",
+      "summary": "Return profit in the account currency for a specified trading operation.",
+      "signatures": [
+        "order_calc_profit(\n   action,          // order type (ORDER_TYPE_BUY or ORDER_TYPE_SELL)\n   symbol,          // symbol name\n   volume,          // volume\n   price_open,      // open price\n   price_close      // close price\n   );"
+      ],
+      "parameters": [
+        {
+          "name": "action",
+          "value_form": "—",
+          "description": "[in] Order type may take one of the two [ORDER_TYPE](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercalcmargin_py#order_type) enumeration values: ORDER_TYPE_BUY or ORDER_TYPE_SELL. Required unnamed parameter."
+        },
+        {
+          "name": "symbol",
+          "value_form": "—",
+          "description": "[in] Financial instrument name. Required unnamed parameter."
+        },
+        {
+          "name": "volume",
+          "value_form": "—",
+          "description": "[in] Trading operation volume. Required unnamed parameter."
+        },
+        {
+          "name": "price_open",
+          "value_form": "—",
+          "description": "[in] Open price. Required unnamed parameter."
+        },
+        {
+          "name": "price_close",
+          "value_form": "—",
+          "description": "[in] Close price. Required unnamed parameter."
+        }
+      ],
+      "returns": "Real value if successful, otherwise None. The error info can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function allows estimating a trading operation result on the current account and in the current trading environment. The function is similar to [OrderCalcProfit](https://www.mql5.com/en/docs/trading/ordercalcprofit)."
+      ],
+      "see_also": [
+        {
+          "text": "order_calc_margin",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercalcmargin_py"
+        },
+        {
+          "text": "order_check",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercalcprofit_py",
+      "mirror_file": "references/mirror/pages/mt5ordercalcprofit_py.md"
+    },
+    {
+      "name": "order_check",
+      "group": "Order maths & execution",
+      "summary": "Check funds sufficiency for performing a required [trading operation](https://www.mql5.com/en/docs/constants/tradingconstants/enum_trade_request_actions).",
+      "signatures": [
+        "order_check(\n   request      // request structure\n   );"
+      ],
+      "parameters": [
+        {
+          "name": "request",
+          "value_form": "—",
+          "description": "[in] [MqlTradeRequest](https://www.mql5.com/en/docs/python_metatrader5/mt5ordersend_py#traderequest) type structure describing a required trading action. Required unnamed parameter. Example of filling in a request and the enumeration content are described below."
+        }
+      ],
+      "returns": "Check result as the [MqlTradeCheckResult](https://www.mql5.com/en/docs/constants/structures/mqltradecheckresult) structure. The request field in the answer contains the structure of a trading request passed to order_check().",
+      "notes": [
+        "Successful sending of a request does not entail that the requested trading operation will be executed successfully. The order_check function is similar to [OrderCheck](https://www.mql5.com/en/docs/trading/ordercheck).",
+        "TRADE_REQUEST_ACTIONS",
+        "ORDER_TYPE_FILLING",
+        "ORDER_TYPE_TIME"
+      ],
+      "see_also": [
+        {
+          "text": "order_send",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordersend_py"
+        },
+        {
+          "text": "OrderCheck",
+          "url": "https://www.mql5.com/en/docs/trading/ordercheck"
+        },
+        {
+          "text": "Trading operation types",
+          "url": "https://www.mql5.com/en/docs/constants/tradingconstants/enum_trade_request_actions"
+        },
+        {
+          "text": "Trading request structure",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqltraderequest"
+        },
+        {
+          "text": "Structure of the trading request check results",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqltradecheckresult"
+        },
+        {
+          "text": "Structure of the trading request result",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqltraderesult"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py",
+      "mirror_file": "references/mirror/pages/mt5ordercheck_py.md"
+    },
+    {
+      "name": "order_send",
+      "group": "Order maths & execution",
+      "summary": "Send a [request](https://www.mql5.com/en/docs/constants/structures/mqltraderequest) to perform a [trading operation](https://www.mql5.com/en/docs/constants/tradingconstants/enum_trade_request_actions) from the terminal to the trade server.",
+      "signatures": [
+        "order_send(\n   request      // request structure\n   );"
+      ],
+      "parameters": [
+        {
+          "name": "request",
+          "value_form": "—",
+          "description": "[in] [MqlTradeRequest](https://www.mql5.com/en/docs/constants/structures/mqltraderequest) type structure describing a required trading action. Required unnamed parameter. Example of filling in a request and the enumeration content are described below."
+        }
+      ],
+      "returns": "Execution result as the [MqlTradeResult](https://www.mql5.com/en/docs/constants/structures/mqltraderesult) structure. The request field in the answer contains the structure of a trading request passed to order_send(). The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py). The [MqlTradeRequest](https://www.mql5.com/en/docs/constants/structures/mqltraderequest) trading request structure | Field | Description |\n| --- | --- |\n| action | Trading operation type. The value can be one of the values of the [TRADE_REQUEST_ACTIONS](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py#trade_request_actions) enumeration |\n| magic | EA ID. Allows arranging the analytical handling of trading orders. Each EA can set a unique ID when sending a trading request |\n| order | Order ticket. Required for modifying pending orders |\n| symbol | The name of the trading instrument, for which the order is placed. Not required when modifying orders and closing positions |\n| volume | Requested volume of a deal in lots. A real volume when making a deal depends on an [order execution type](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py#order_type_filling). |\n| price | Price at which an order should be executed. The price is not set in case of market orders for instruments of the \"Market Execution\" ([SYMBOL_TRADE_EXECUTION_MARKET](https://www.mql5.com/en/docs/constants/environment_state/marketinfoconstants#enum_symbol_trade_execution)) type having the [TRADE_ACTION_DEAL](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py#trade_request_actions) type |\n| stoplimit | A price a pending Limit order is set at when the price reaches the 'price' value (this condition is mandatory). The pending order is not passed to the trading system until that moment |\n| sl | A price a Stop Loss order is activated at when the price moves in an unfavorable direction |\n| tp | A price a Take Profit order is activated at when the price moves in a favorable direction |\n| deviation | Maximum acceptable deviation from the requested price, specified in [points](https://www.mql5.com/en/docs/predefined/_point) |\n| type | Order type. The value can be one of the values of the [ORDER_TYPE](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercalcmargin_py#order_type) enumeration |\n| type_filling | Order filling type. The value can be one of the [ORDER_TYPE_FILLING](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py#order_type_filling) values |\n| type_time | Order type by expiration. The value can be one of the [ORDER_TYPE_TIME](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py#order_type_time) values |\n| expiration | Pending order expiration time (for [TIME_SPECIFIED](https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py#order_type_time) type orders) |\n| comment | Comment to an order |\n| position | Position ticket. Fill it when changing and closing a position for its clear identification. Usually, it is the same as the ticket of the order that opened the position. |\n| position_by | Opposite position ticket. It is used when closing a position by an opposite one (opened at the same symbol but in the opposite direction). |",
+      "notes": [
+        "A trading request passes several verification stages on the trade server. First, the validity of all the necessary request fields is checked. If there are no errors, the server accepts the order for further handling. See the [OrderSend](https://www.mql5.com/en/docs/trading/ordersend) function description for the details about executing trading operations."
+      ],
+      "see_also": [
+        {
+          "text": "order_check",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordercheck_py"
+        },
+        {
+          "text": "OrderSend",
+          "url": "https://www.mql5.com/en/docs/trading/ordersend"
+        },
+        {
+          "text": "Trading operation types",
+          "url": "https://www.mql5.com/en/docs/constants/tradingconstants/enum_trade_request_actions"
+        },
+        {
+          "text": "Trading request structure",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqltraderequest"
+        },
+        {
+          "text": "Structure of the trading request check results",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqltradecheckresult"
+        },
+        {
+          "text": "Structure of the trading request result",
+          "url": "https://www.mql5.com/en/docs/constants/structures/mqltraderesult"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordersend_py",
+      "mirror_file": "references/mirror/pages/mt5ordersend_py.md"
+    },
+    {
+      "name": "positions_total",
+      "group": "Positions",
+      "summary": "Get the number of open positions.",
+      "signatures": [
+        "positions_total()"
+      ],
+      "parameters": [],
+      "returns": "Integer value.",
+      "notes": [
+        "The function is similar to [PositionsTotal](https://www.mql5.com/en/docs/trading/positionstotal)."
+      ],
+      "see_also": [
+        {
+          "text": "positions_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5positionsget_py"
+        },
+        {
+          "text": "orders_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5orderstotal_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5positionstotal_py",
+      "mirror_file": "references/mirror/pages/mt5positionstotal_py.md"
+    },
+    {
+      "name": "positions_get",
+      "group": "Positions",
+      "summary": "Get open positions with the ability to filter by symbol or ticket.",
+      "signatures": [
+        "positions_get()",
+        "positions_get(\n   symbol=\"SYMBOL\"      // symbol name\n)",
+        "positions_get(\n   group=\"GROUP\"        // filter for selecting positions by symbols\n)",
+        "positions_get(\n   ticket=TICKET        // ticket\n)"
+      ],
+      "parameters": [
+        {
+          "name": "symbol=\"SYMBOL\"",
+          "value_form": "`\"SYMBOL\"`",
+          "description": "[in] Symbol name. Optional named parameter. If a symbol is specified, the ticket parameter is ignored."
+        },
+        {
+          "name": "group=\"GROUP\"",
+          "value_form": "`\"GROUP\"`",
+          "description": "[in] The filter for arranging a group of necessary symbols. Optional named parameter. If the group is specified, the function returns only positions meeting a specified criteria for a symbol name."
+        },
+        {
+          "name": "ticket=TICKET",
+          "value_form": "`TICKET`",
+          "description": "[in] Position ticket ([POSITION_TICKET](https://www.mql5.com/en/docs/constants/tradingconstants/positionproperties#enum_position_property_integer)). Optional named parameter."
+        }
+      ],
+      "returns": "Return info in the form of a named tuple structure (namedtuple). Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function allows receiving all open positions within one call similar to the [PositionsTotal](https://www.mql5.com/en/docs/trading/positionstotal) and [PositionSelect](https://www.mql5.com/en/docs/trading/positionselect) tandem.",
+        "The group parameter may contain several comma separated conditions. A condition can be set as a mask using '*'. The logical negation symbol '!' can be used for an exclusion. All conditions are applied sequentially, which means conditions of including to a group should be specified first followed by an exclusion condition. For example, group=\"*, !EUR\" means that positions for all symbols should be selected first and the ones containing \"EUR\" in symbol names should be excluded afterwards."
+      ],
+      "see_also": [
+        {
+          "text": "positions_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5positionstotal_py"
+        },
+        {
+          "text": "orders_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5ordersget_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5positionsget_py",
+      "mirror_file": "references/mirror/pages/mt5positionsget_py.md"
+    },
+    {
+      "name": "history_orders_total",
+      "group": "History",
+      "summary": "Get the number of orders in trading history within the specified interval.",
+      "signatures": [
+        "history_orders_total(\n   date_from,    // date the orders are requested from\n   date_to       // date, up to which the orders are requested\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "date_from",
+          "value_form": "—",
+          "description": "[in] Date the orders are requested from. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        },
+        {
+          "name": "date_to",
+          "value_form": "—",
+          "description": "[in] Date, up to which the orders are requested. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        }
+      ],
+      "returns": "Integer value.",
+      "notes": [
+        "The function is similar to [HistoryOrdersTotal](https://www.mql5.com/en/docs/trading/historyorderstotal)."
+      ],
+      "see_also": [
+        {
+          "text": "history_orders_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historyordersget_py"
+        },
+        {
+          "text": "history_deals_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historydealstotal_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historyorderstotal_py",
+      "mirror_file": "references/mirror/pages/mt5historyorderstotal_py.md"
+    },
+    {
+      "name": "history_orders_get",
+      "group": "History",
+      "summary": "Get orders from trading history with the ability to filter by ticket or position.",
+      "signatures": [
+        "history_orders_get(\n   date_from,                // date the orders are requested from\n   date_to,                  // date, up to which the orders are requested\n   group=\"GROUP\"        // filter for selecting orders by symbols\n   )",
+        "history_orders_get(\n   ticket=TICKET        // order ticket\n)",
+        "history_orders_get(\n   position=POSITION    // position ticket\n)"
+      ],
+      "parameters": [
+        {
+          "name": "date_from",
+          "value_form": "—",
+          "description": "[in] Date the orders are requested from. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter is specified first."
+        },
+        {
+          "name": "date_to",
+          "value_form": "—",
+          "description": "[in] Date, up to which the orders are requested. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter is specified second."
+        },
+        {
+          "name": "group=\"GROUP\"",
+          "value_form": "`\"GROUP\"`",
+          "description": "[in] The filter for arranging a group of necessary symbols. Optional named parameter. If the group is specified, the function returns only orders meeting a specified criteria for a symbol name."
+        },
+        {
+          "name": "ticket=TICKET",
+          "value_form": "`TICKET`",
+          "description": "[in] Order ticket that should be received. Optional parameter. If not specified, the filter is not applied."
+        },
+        {
+          "name": "position=POSITION",
+          "value_form": "`POSITION`",
+          "description": "[in] Ticket of a position (stored in [ORDER_POSITION_ID](https://www.mql5.com/en/docs/constants/tradingconstants/orderproperties#enum_order_property_integer)) all orders should be received for. Optional parameter. If not specified, the filter is not applied."
+        }
+      ],
+      "returns": "Return info in the form of a named tuple structure (namedtuple). Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function allows receiving all history orders within a specified period in a single call similar to the [HistoryOrdersTotal](https://www.mql5.com/en/docs/trading/historyorderstotal) and [HistoryOrderSelect](https://www.mql5.com/en/docs/trading/historyorderselect) tandem.",
+        "The group parameter may contain several comma separated conditions. A condition can be set as a mask using '*'. The logical negation symbol '!' can be used for an exclusion. All conditions are applied sequentially, which means conditions of including to a group should be specified first followed by an exclusion condition. For example, group=\"*, !EUR\" means that deals for all symbols should be selected first and the ones containing \"EUR\" in symbol names should be excluded afterwards."
+      ],
+      "see_also": [
+        {
+          "text": "history_deals_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historydealstotal_py"
+        },
+        {
+          "text": "history_deals_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historydealsget_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historyordersget_py",
+      "mirror_file": "references/mirror/pages/mt5historyordersget_py.md"
+    },
+    {
+      "name": "history_deals_total",
+      "group": "History",
+      "summary": "Get the number of deals in trading history within the specified interval.",
+      "signatures": [
+        "history_deals_total(\n   date_from,    // date the deals are requested from\n   date_to       // date, up to which the deals are requested\n   )"
+      ],
+      "parameters": [
+        {
+          "name": "date_from",
+          "value_form": "—",
+          "description": "[in] Date the deals are requested from. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        },
+        {
+          "name": "date_to",
+          "value_form": "—",
+          "description": "[in] Date, up to which the deals are requested. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter."
+        }
+      ],
+      "returns": "Integer value.",
+      "notes": [
+        "The function is similar to [HistoryDealsTotal](https://www.mql5.com/en/docs/trading/historydealstotal)."
+      ],
+      "see_also": [
+        {
+          "text": "history_deals_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historydealsget_py"
+        },
+        {
+          "text": "history_orders_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historyorderstotal_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historydealstotal_py",
+      "mirror_file": "references/mirror/pages/mt5historydealstotal_py.md"
+    },
+    {
+      "name": "history_deals_get",
+      "group": "History",
+      "summary": "Get deals from trading history within the specified interval with the ability to filter by ticket or position.",
+      "signatures": [
+        "history_deals_get(\n   date_from,                // date the deals are requested from\n   date_to,                  // date, up to which the deals are requested\n   group=\"GROUP\"        // filter for selecting deals for symbols\n   )",
+        "history_deals_get(\n   ticket=TICKET        // order ticket\n)",
+        "history_deals_get(\n   position=POSITION    // position ticket\n)"
+      ],
+      "parameters": [
+        {
+          "name": "date_from",
+          "value_form": "—",
+          "description": "[in] Date the orders are requested from. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter is specified first."
+        },
+        {
+          "name": "date_to",
+          "value_form": "—",
+          "description": "[in] Date, up to which the orders are requested. Set by the 'datetime' object or as a number of seconds elapsed since 1970.01.01. Required unnamed parameter is specified second."
+        },
+        {
+          "name": "group=\"GROUP\"",
+          "value_form": "`\"GROUP\"`",
+          "description": "[in] The filter for arranging a group of necessary symbols. Optional named parameter. If the group is specified, the function returns only deals meeting a specified criteria for a symbol name."
+        },
+        {
+          "name": "ticket=TICKET",
+          "value_form": "`TICKET`",
+          "description": "[in] Ticket of an order (stored in [DEAL_ORDER](https://www.mql5.com/en/docs/constants/tradingconstants/dealproperties#enum_deal_property_integer)) all deals should be received for. Optional parameter. If not specified, the filter is not applied."
+        },
+        {
+          "name": "position=POSITION",
+          "value_form": "`POSITION`",
+          "description": "[in] Ticket of a position (stored in [DEAL_POSITION_ID](https://www.mql5.com/en/docs/constants/tradingconstants/dealproperties#enum_deal_property_integer)) all deals should be received for. Optional parameter. If not specified, the filter is not applied."
+        }
+      ],
+      "returns": "Return info in the form of a named tuple structure (namedtuple). Return None in case of an error. The info on the error can be obtained using [last_error()](https://www.mql5.com/en/docs/python_metatrader5/mt5lasterror_py).",
+      "notes": [
+        "The function allows receiving all history deals within a specified period in a single call similar to the [HistoryDealsTotal](https://www.mql5.com/en/docs/trading/historydealstotal) and [HistoryDealSelect](https://www.mql5.com/en/docs/trading/historydealselect) tandem.",
+        "The group parameter allows sorting out deals by symbols. '*' can be used at the beginning and the end of a string.",
+        "The group parameter may contain several comma separated conditions. A condition can be set as a mask using '*'. The logical negation symbol '!' can be used for an exclusion. All conditions are applied sequentially, which means conditions of including to a group should be specified first followed by an exclusion condition. For example, group=\"*, !EUR\" means that deals for all symbols should be selected first and the ones containing \"EUR\" in symbol names should be excluded afterwards."
+      ],
+      "see_also": [
+        {
+          "text": "history_deals_total",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historydealstotal_py"
+        },
+        {
+          "text": "history_orders_get",
+          "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historyordersget_py"
+        }
+      ],
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5historydealsget_py",
+      "mirror_file": "references/mirror/pages/mt5historydealsget_py.md"
+    }
+  ],
+  "helpers": [
+    {
+      "name": "Buy",
+      "signature": "mt5.Buy(symbol, volume, price=None, *, comment=None, ticket=None)"
+    },
+    {
+      "name": "Sell",
+      "signature": "mt5.Sell(symbol, volume, price=None, *, comment=None, ticket=None)"
+    },
+    {
+      "name": "Close",
+      "signature": "mt5.Close(symbol, *, comment=None, ticket=None)"
+    }
+  ],
+  "constants": {
+    "ACCOUNT_MARGIN_MODE_EXCHANGE": {
+      "value": 1,
+      "description": ""
+    },
+    "ACCOUNT_MARGIN_MODE_RETAIL_HEDGING": {
+      "value": 2,
+      "description": ""
+    },
+    "ACCOUNT_MARGIN_MODE_RETAIL_NETTING": {
+      "value": 0,
+      "description": ""
+    },
+    "ACCOUNT_STOPOUT_MODE_MONEY": {
+      "value": 1,
+      "description": ""
+    },
+    "ACCOUNT_STOPOUT_MODE_PERCENT": {
+      "value": 0,
+      "description": ""
+    },
+    "ACCOUNT_TRADE_MODE_CONTEST": {
+      "value": 1,
+      "description": ""
+    },
+    "ACCOUNT_TRADE_MODE_DEMO": {
+      "value": 0,
+      "description": ""
+    },
+    "ACCOUNT_TRADE_MODE_REAL": {
+      "value": 2,
+      "description": ""
+    },
+    "BOOK_TYPE_BUY": {
+      "value": 2,
+      "description": ""
+    },
+    "BOOK_TYPE_BUY_MARKET": {
+      "value": 4,
+      "description": ""
+    },
+    "BOOK_TYPE_SELL": {
+      "value": 1,
+      "description": ""
+    },
+    "BOOK_TYPE_SELL_MARKET": {
+      "value": 3,
+      "description": ""
+    },
+    "COPY_TICKS_ALL": {
+      "value": -1,
+      "description": "all ticks"
+    },
+    "COPY_TICKS_INFO": {
+      "value": 1,
+      "description": "ticks containing Bid and/or Ask price changes"
+    },
+    "COPY_TICKS_TRADE": {
+      "value": 2,
+      "description": "ticks containing Last and/or Volume price changes"
+    },
+    "DAY_OF_WEEK_FRIDAY": {
+      "value": 5,
+      "description": ""
+    },
+    "DAY_OF_WEEK_MONDAY": {
+      "value": 1,
+      "description": ""
+    },
+    "DAY_OF_WEEK_SATURDAY": {
+      "value": 6,
+      "description": ""
+    },
+    "DAY_OF_WEEK_SUNDAY": {
+      "value": 0,
+      "description": ""
+    },
+    "DAY_OF_WEEK_THURSDAY": {
+      "value": 4,
+      "description": ""
+    },
+    "DAY_OF_WEEK_TUESDAY": {
+      "value": 2,
+      "description": ""
+    },
+    "DAY_OF_WEEK_WEDNESDAY": {
+      "value": 3,
+      "description": ""
+    },
+    "DEAL_DIVIDEND": {
+      "value": 15,
+      "description": ""
+    },
+    "DEAL_DIVIDEND_FRANKED": {
+      "value": 16,
+      "description": ""
+    },
+    "DEAL_ENTRY_IN": {
+      "value": 0,
+      "description": ""
+    },
+    "DEAL_ENTRY_INOUT": {
+      "value": 2,
+      "description": ""
+    },
+    "DEAL_ENTRY_OUT": {
+      "value": 1,
+      "description": ""
+    },
+    "DEAL_ENTRY_OUT_BY": {
+      "value": 3,
+      "description": ""
+    },
+    "DEAL_REASON_CLIENT": {
+      "value": 0,
+      "description": ""
+    },
+    "DEAL_REASON_EXPERT": {
+      "value": 3,
+      "description": ""
+    },
+    "DEAL_REASON_MOBILE": {
+      "value": 1,
+      "description": ""
+    },
+    "DEAL_REASON_ROLLOVER": {
+      "value": 7,
+      "description": ""
+    },
+    "DEAL_REASON_SL": {
+      "value": 4,
+      "description": ""
+    },
+    "DEAL_REASON_SO": {
+      "value": 6,
+      "description": ""
+    },
+    "DEAL_REASON_SPLIT": {
+      "value": 9,
+      "description": ""
+    },
+    "DEAL_REASON_TP": {
+      "value": 5,
+      "description": ""
+    },
+    "DEAL_REASON_VMARGIN": {
+      "value": 8,
+      "description": ""
+    },
+    "DEAL_REASON_WEB": {
+      "value": 2,
+      "description": ""
+    },
+    "DEAL_TAX": {
+      "value": 17,
+      "description": ""
+    },
+    "DEAL_TYPE_BALANCE": {
+      "value": 2,
+      "description": ""
+    },
+    "DEAL_TYPE_BONUS": {
+      "value": 6,
+      "description": ""
+    },
+    "DEAL_TYPE_BUY": {
+      "value": 0,
+      "description": ""
+    },
+    "DEAL_TYPE_BUY_CANCELED": {
+      "value": 13,
+      "description": ""
+    },
+    "DEAL_TYPE_CHARGE": {
+      "value": 4,
+      "description": ""
+    },
+    "DEAL_TYPE_COMMISSION": {
+      "value": 7,
+      "description": ""
+    },
+    "DEAL_TYPE_COMMISSION_AGENT_DAILY": {
+      "value": 10,
+      "description": ""
+    },
+    "DEAL_TYPE_COMMISSION_AGENT_MONTHLY": {
+      "value": 11,
+      "description": ""
+    },
+    "DEAL_TYPE_COMMISSION_DAILY": {
+      "value": 8,
+      "description": ""
+    },
+    "DEAL_TYPE_COMMISSION_MONTHLY": {
+      "value": 9,
+      "description": ""
+    },
+    "DEAL_TYPE_CORRECTION": {
+      "value": 5,
+      "description": ""
+    },
+    "DEAL_TYPE_CREDIT": {
+      "value": 3,
+      "description": ""
+    },
+    "DEAL_TYPE_INTEREST": {
+      "value": 12,
+      "description": ""
+    },
+    "DEAL_TYPE_SELL": {
+      "value": 1,
+      "description": ""
+    },
+    "DEAL_TYPE_SELL_CANCELED": {
+      "value": 14,
+      "description": ""
+    },
+    "ORDER_FILLING_BOC": {
+      "value": 3,
+      "description": ""
+    },
+    "ORDER_FILLING_FOK": {
+      "value": 0,
+      "description": "This execution policy means that an order can be executed only in the specified volume. If the necessary amount of a financial instrument is currently unavailable in the market, the order will not be executed. The desired volume can be made up of several available offers."
+    },
+    "ORDER_FILLING_IOC": {
+      "value": 1,
+      "description": "An agreement to execute a deal at the maximum volume available in the market within the volume specified in the order. If the request cannot be filled completely, an order with the available volume will be executed, and the remaining volume will be canceled."
+    },
+    "ORDER_FILLING_RETURN": {
+      "value": 2,
+      "description": "This policy is used only for market (ORDER_TYPE_BUY and ORDER_TYPE_SELL), limit and stop limit orders (ORDER_TYPE_BUY_LIMIT, ORDER_TYPE_SELL_LIMIT, ORDER_TYPE_BUY_STOP_LIMIT and ORDER_TYPE_SELL_STOP_LIMIT) and only for the symbols with Market or Exchange execution [modes](https://www.mql5.com/en/docs/constants/environment_state/marketinfoconstants#enum_symbol_trade_execution). If filled partially, a market or limit order with the remaining volume is not canceled, and is processed further.\nDuring activation of the ORDER_TYPE_BUY_STOP_LIMIT and ORDER_TYPE_SELL_STOP_LIMIT orders, an appropriate limit order ORDER_TYPE_BUY_LIMIT/ORDER_TYPE_SELL_LIMIT with the ORDER_FILLING_RETURN type is created."
+    },
+    "ORDER_REASON_CLIENT": {
+      "value": 0,
+      "description": ""
+    },
+    "ORDER_REASON_EXPERT": {
+      "value": 3,
+      "description": ""
+    },
+    "ORDER_REASON_MOBILE": {
+      "value": 1,
+      "description": ""
+    },
+    "ORDER_REASON_SL": {
+      "value": 4,
+      "description": ""
+    },
+    "ORDER_REASON_SO": {
+      "value": 6,
+      "description": ""
+    },
+    "ORDER_REASON_TP": {
+      "value": 5,
+      "description": ""
+    },
+    "ORDER_REASON_WEB": {
+      "value": 2,
+      "description": ""
+    },
+    "ORDER_STATE_CANCELED": {
+      "value": 2,
+      "description": ""
+    },
+    "ORDER_STATE_EXPIRED": {
+      "value": 6,
+      "description": ""
+    },
+    "ORDER_STATE_FILLED": {
+      "value": 4,
+      "description": ""
+    },
+    "ORDER_STATE_PARTIAL": {
+      "value": 3,
+      "description": ""
+    },
+    "ORDER_STATE_PLACED": {
+      "value": 1,
+      "description": ""
+    },
+    "ORDER_STATE_REJECTED": {
+      "value": 5,
+      "description": ""
+    },
+    "ORDER_STATE_REQUEST_ADD": {
+      "value": 7,
+      "description": ""
+    },
+    "ORDER_STATE_REQUEST_CANCEL": {
+      "value": 9,
+      "description": ""
+    },
+    "ORDER_STATE_REQUEST_MODIFY": {
+      "value": 8,
+      "description": ""
+    },
+    "ORDER_STATE_STARTED": {
+      "value": 0,
+      "description": ""
+    },
+    "ORDER_TIME_DAY": {
+      "value": 1,
+      "description": "The order is active only during the current trading day"
+    },
+    "ORDER_TIME_GTC": {
+      "value": 0,
+      "description": "The order stays in the queue until it is manually canceled"
+    },
+    "ORDER_TIME_SPECIFIED": {
+      "value": 2,
+      "description": "The order is active until the specified date"
+    },
+    "ORDER_TIME_SPECIFIED_DAY": {
+      "value": 3,
+      "description": "The order is active until 23:59:59 of the specified day. If this time appears to be out of a trading session, the expiration is processed at the nearest trading time."
+    },
+    "ORDER_TYPE_BUY": {
+      "value": 0,
+      "description": "Market buy order"
+    },
+    "ORDER_TYPE_BUY_LIMIT": {
+      "value": 2,
+      "description": "Buy Limit pending order"
+    },
+    "ORDER_TYPE_BUY_STOP": {
+      "value": 4,
+      "description": "Buy Stop pending order"
+    },
+    "ORDER_TYPE_BUY_STOP_LIMIT": {
+      "value": 6,
+      "description": "Upon reaching the order price, Buy Limit pending order is placed at StopLimit price"
+    },
+    "ORDER_TYPE_CLOSE_BY": {
+      "value": 8,
+      "description": "Order for closing a position by an opposite one"
+    },
+    "ORDER_TYPE_SELL": {
+      "value": 1,
+      "description": "Market sell order"
+    },
+    "ORDER_TYPE_SELL_LIMIT": {
+      "value": 3,
+      "description": "Sell Limit pending order"
+    },
+    "ORDER_TYPE_SELL_STOP": {
+      "value": 5,
+      "description": "Sell Stop pending order"
+    },
+    "ORDER_TYPE_SELL_STOP_LIMIT": {
+      "value": 7,
+      "description": "Upon reaching the order price, Sell Limit pending order is placed at StopLimit price"
+    },
+    "POSITION_REASON_CLIENT": {
+      "value": 0,
+      "description": ""
+    },
+    "POSITION_REASON_EXPERT": {
+      "value": 3,
+      "description": ""
+    },
+    "POSITION_REASON_MOBILE": {
+      "value": 1,
+      "description": ""
+    },
+    "POSITION_REASON_WEB": {
+      "value": 2,
+      "description": ""
+    },
+    "POSITION_TYPE_BUY": {
+      "value": 0,
+      "description": ""
+    },
+    "POSITION_TYPE_SELL": {
+      "value": 1,
+      "description": ""
+    },
+    "RES_E_AUTH_FAILED": {
+      "value": -6,
+      "description": "authorization failed"
+    },
+    "RES_E_AUTO_TRADING_DISABLED": {
+      "value": -8,
+      "description": "auto-trading disabled"
+    },
+    "RES_E_FAIL": {
+      "value": -1,
+      "description": "generic fail"
+    },
+    "RES_E_INTERNAL_FAIL": {
+      "value": -10000,
+      "description": "internal IPC general error"
+    },
+    "RES_E_INTERNAL_FAIL_CONNECT": {
+      "value": -10004,
+      "description": "internal IPC no ipc"
+    },
+    "RES_E_INTERNAL_FAIL_INIT": {
+      "value": -10003,
+      "description": "internal IPC initialization fail"
+    },
+    "RES_E_INTERNAL_FAIL_RECEIVE": {
+      "value": -10002,
+      "description": "internal IPC recv failed"
+    },
+    "RES_E_INTERNAL_FAIL_SEND": {
+      "value": -10001,
+      "description": "internal IPC send failed"
+    },
+    "RES_E_INTERNAL_FAIL_TIMEOUT": {
+      "value": -10005,
+      "description": "internal timeout"
+    },
+    "RES_E_INVALID_PARAMS": {
+      "value": -2,
+      "description": "invalid arguments/parameters"
+    },
+    "RES_E_INVALID_VERSION": {
+      "value": -5,
+      "description": "invalid version"
+    },
+    "RES_E_NOT_FOUND": {
+      "value": -4,
+      "description": "no history"
+    },
+    "RES_E_NO_MEMORY": {
+      "value": -3,
+      "description": "no memory condition"
+    },
+    "RES_E_UNSUPPORTED": {
+      "value": -7,
+      "description": "unsupported method"
+    },
+    "RES_S_OK": {
+      "value": 1,
+      "description": "generic success"
+    },
+    "SYMBOL_CALC_MODE_CFD": {
+      "value": 2,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_CFDINDEX": {
+      "value": 3,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_CFDLEVERAGE": {
+      "value": 4,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_EXCH_BONDS": {
+      "value": 37,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_EXCH_BONDS_MOEX": {
+      "value": 39,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_EXCH_FUTURES": {
+      "value": 33,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_EXCH_OPTIONS": {
+      "value": 34,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_EXCH_OPTIONS_MARGIN": {
+      "value": 36,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_EXCH_STOCKS": {
+      "value": 32,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_EXCH_STOCKS_MOEX": {
+      "value": 38,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_FOREX": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_FOREX_NO_LEVERAGE": {
+      "value": 5,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_FUTURES": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_CALC_MODE_SERV_COLLATERAL": {
+      "value": 64,
+      "description": ""
+    },
+    "SYMBOL_CHART_MODE_BID": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_CHART_MODE_LAST": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_OPTION_MODE_AMERICAN": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_OPTION_MODE_EUROPEAN": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_OPTION_RIGHT_CALL": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_OPTION_RIGHT_PUT": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_ORDERS_DAILY": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_ORDERS_DAILY_NO_STOPS": {
+      "value": 2,
+      "description": ""
+    },
+    "SYMBOL_ORDERS_GTC": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_CURRENCY_DEPOSIT": {
+      "value": 4,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_CURRENCY_MARGIN": {
+      "value": 3,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_CURRENCY_SYMBOL": {
+      "value": 2,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_DISABLED": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_INTEREST_CURRENT": {
+      "value": 5,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_INTEREST_OPEN": {
+      "value": 6,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_POINTS": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_REOPEN_BID": {
+      "value": 8,
+      "description": ""
+    },
+    "SYMBOL_SWAP_MODE_REOPEN_CURRENT": {
+      "value": 7,
+      "description": ""
+    },
+    "SYMBOL_TRADE_EXECUTION_EXCHANGE": {
+      "value": 3,
+      "description": ""
+    },
+    "SYMBOL_TRADE_EXECUTION_INSTANT": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_TRADE_EXECUTION_MARKET": {
+      "value": 2,
+      "description": ""
+    },
+    "SYMBOL_TRADE_EXECUTION_REQUEST": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_TRADE_MODE_CLOSEONLY": {
+      "value": 3,
+      "description": ""
+    },
+    "SYMBOL_TRADE_MODE_DISABLED": {
+      "value": 0,
+      "description": ""
+    },
+    "SYMBOL_TRADE_MODE_FULL": {
+      "value": 4,
+      "description": ""
+    },
+    "SYMBOL_TRADE_MODE_LONGONLY": {
+      "value": 1,
+      "description": ""
+    },
+    "SYMBOL_TRADE_MODE_SHORTONLY": {
+      "value": 2,
+      "description": ""
+    },
+    "TICK_FLAG_ASK": {
+      "value": 4,
+      "description": "Ask price changed"
+    },
+    "TICK_FLAG_BID": {
+      "value": 2,
+      "description": "Bid price changed"
+    },
+    "TICK_FLAG_BUY": {
+      "value": 32,
+      "description": "last Buy price changed"
+    },
+    "TICK_FLAG_LAST": {
+      "value": 8,
+      "description": "Last price changed"
+    },
+    "TICK_FLAG_SELL": {
+      "value": 64,
+      "description": "last Sell price changed"
+    },
+    "TICK_FLAG_VOLUME": {
+      "value": 16,
+      "description": "Volume changed"
+    },
+    "TIMEFRAME_D1": {
+      "value": 16408,
+      "description": "1 day"
+    },
+    "TIMEFRAME_H1": {
+      "value": 16385,
+      "description": "1 hour"
+    },
+    "TIMEFRAME_H12": {
+      "value": 16396,
+      "description": "12 hours"
+    },
+    "TIMEFRAME_H2": {
+      "value": 16386,
+      "description": "2 hours"
+    },
+    "TIMEFRAME_H3": {
+      "value": 16387,
+      "description": "3 hours"
+    },
+    "TIMEFRAME_H4": {
+      "value": 16388,
+      "description": "4 hours"
+    },
+    "TIMEFRAME_H6": {
+      "value": 16390,
+      "description": "6 hours"
+    },
+    "TIMEFRAME_H8": {
+      "value": 16392,
+      "description": "8 hours"
+    },
+    "TIMEFRAME_M1": {
+      "value": 1,
+      "description": "1 minute"
+    },
+    "TIMEFRAME_M10": {
+      "value": 10,
+      "description": "10 minutes"
+    },
+    "TIMEFRAME_M12": {
+      "value": 12,
+      "description": "15 minutes"
+    },
+    "TIMEFRAME_M15": {
+      "value": 15,
+      "description": ""
+    },
+    "TIMEFRAME_M2": {
+      "value": 2,
+      "description": "2 minutes"
+    },
+    "TIMEFRAME_M20": {
+      "value": 20,
+      "description": "20 minutes"
+    },
+    "TIMEFRAME_M3": {
+      "value": 3,
+      "description": "3 minutes"
+    },
+    "TIMEFRAME_M30": {
+      "value": 30,
+      "description": "30 minutes"
+    },
+    "TIMEFRAME_M4": {
+      "value": 4,
+      "description": "4 minutes"
+    },
+    "TIMEFRAME_M5": {
+      "value": 5,
+      "description": "5 minutes"
+    },
+    "TIMEFRAME_M6": {
+      "value": 6,
+      "description": "6 minutes"
+    },
+    "TIMEFRAME_MN1": {
+      "value": 49153,
+      "description": "1 month"
+    },
+    "TIMEFRAME_W1": {
+      "value": 32769,
+      "description": "1 week"
+    },
+    "TRADE_ACTION_CLOSE_BY": {
+      "value": 10,
+      "description": "Close a position by an opposite one"
+    },
+    "TRADE_ACTION_DEAL": {
+      "value": 1,
+      "description": "Place an order for an instant deal with the specified parameters (set a market order)"
+    },
+    "TRADE_ACTION_MODIFY": {
+      "value": 7,
+      "description": "Change parameters of the previously placed trading order"
+    },
+    "TRADE_ACTION_PENDING": {
+      "value": 5,
+      "description": "Place an order for performing a deal at specified conditions (pending order)"
+    },
+    "TRADE_ACTION_REMOVE": {
+      "value": 8,
+      "description": "Remove previously placed pending order"
+    },
+    "TRADE_ACTION_SLTP": {
+      "value": 6,
+      "description": "Change open position Stop Loss and Take Profit"
+    },
+    "TRADE_RETCODE_CANCEL": {
+      "value": 10007,
+      "description": ""
+    },
+    "TRADE_RETCODE_CLIENT_DISABLES_AT": {
+      "value": 10027,
+      "description": ""
+    },
+    "TRADE_RETCODE_CLOSE_ONLY": {
+      "value": 10044,
+      "description": ""
+    },
+    "TRADE_RETCODE_CLOSE_ORDER_EXIST": {
+      "value": 10039,
+      "description": ""
+    },
+    "TRADE_RETCODE_CONNECTION": {
+      "value": 10031,
+      "description": ""
+    },
+    "TRADE_RETCODE_DONE": {
+      "value": 10009,
+      "description": ""
+    },
+    "TRADE_RETCODE_DONE_PARTIAL": {
+      "value": 10010,
+      "description": ""
+    },
+    "TRADE_RETCODE_ERROR": {
+      "value": 10011,
+      "description": ""
+    },
+    "TRADE_RETCODE_FIFO_CLOSE": {
+      "value": 10045,
+      "description": ""
+    },
+    "TRADE_RETCODE_FROZEN": {
+      "value": 10029,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID": {
+      "value": 10013,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID_CLOSE_VOLUME": {
+      "value": 10038,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID_EXPIRATION": {
+      "value": 10022,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID_FILL": {
+      "value": 10030,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID_ORDER": {
+      "value": 10035,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID_PRICE": {
+      "value": 10015,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID_STOPS": {
+      "value": 10016,
+      "description": ""
+    },
+    "TRADE_RETCODE_INVALID_VOLUME": {
+      "value": 10014,
+      "description": ""
+    },
+    "TRADE_RETCODE_LIMIT_ORDERS": {
+      "value": 10033,
+      "description": ""
+    },
+    "TRADE_RETCODE_LIMIT_POSITIONS": {
+      "value": 10040,
+      "description": ""
+    },
+    "TRADE_RETCODE_LIMIT_VOLUME": {
+      "value": 10034,
+      "description": ""
+    },
+    "TRADE_RETCODE_LOCKED": {
+      "value": 10028,
+      "description": ""
+    },
+    "TRADE_RETCODE_LONG_ONLY": {
+      "value": 10042,
+      "description": ""
+    },
+    "TRADE_RETCODE_MARKET_CLOSED": {
+      "value": 10018,
+      "description": ""
+    },
+    "TRADE_RETCODE_NO_CHANGES": {
+      "value": 10025,
+      "description": ""
+    },
+    "TRADE_RETCODE_NO_MONEY": {
+      "value": 10019,
+      "description": ""
+    },
+    "TRADE_RETCODE_ONLY_REAL": {
+      "value": 10032,
+      "description": ""
+    },
+    "TRADE_RETCODE_ORDER_CHANGED": {
+      "value": 10023,
+      "description": ""
+    },
+    "TRADE_RETCODE_PLACED": {
+      "value": 10008,
+      "description": ""
+    },
+    "TRADE_RETCODE_POSITION_CLOSED": {
+      "value": 10036,
+      "description": ""
+    },
+    "TRADE_RETCODE_PRICE_CHANGED": {
+      "value": 10020,
+      "description": ""
+    },
+    "TRADE_RETCODE_PRICE_OFF": {
+      "value": 10021,
+      "description": ""
+    },
+    "TRADE_RETCODE_REJECT": {
+      "value": 10006,
+      "description": ""
+    },
+    "TRADE_RETCODE_REJECT_CANCEL": {
+      "value": 10041,
+      "description": ""
+    },
+    "TRADE_RETCODE_REQUOTE": {
+      "value": 10004,
+      "description": ""
+    },
+    "TRADE_RETCODE_SERVER_DISABLES_AT": {
+      "value": 10026,
+      "description": ""
+    },
+    "TRADE_RETCODE_SHORT_ONLY": {
+      "value": 10043,
+      "description": ""
+    },
+    "TRADE_RETCODE_TIMEOUT": {
+      "value": 10012,
+      "description": ""
+    },
+    "TRADE_RETCODE_TOO_MANY_REQUESTS": {
+      "value": 10024,
+      "description": ""
+    },
+    "TRADE_RETCODE_TRADE_DISABLED": {
+      "value": 10017,
+      "description": ""
+    }
+  },
+  "live_verified": {
+    "probed_at": "2026-10-20T16:30:24",
+    "terminal_build": [
+      500,
+      5836,
+      "28 Apr 2026"
+    ],
+    "initialize": true,
+    "last_error": [
+      1,
+      "Success"
+    ],
+    "symbols_total": 12278,
+    "structure_fields": {
+      "TerminalInfo": [
+        "community_account",
+        "community_connection",
+        "connected",
+        "dlls_allowed",
+        "trade_allowed",
+        "tradeapi_disabled",
+        "email_enabled",
+        "ftp_enabled",
+        "notifications_enabled",
+        "mqid",
+        "build",
+        "maxbars",
+        "codepage",
+        "ping_last",
+        "community_balance",
+        "retransmission",
+        "company",
+        "name",
+        "language",
+        "path",
+        "data_path",
+        "commondata_path"
+      ],
+      "AccountInfo": [
+        "login",
+        "trade_mode",
+        "leverage",
+        "limit_orders",
+        "margin_so_mode",
+        "trade_allowed",
+        "trade_expert",
+        "margin_mode",
+        "currency_digits",
+        "fifo_close",
+        "balance",
+        "credit",
+        "profit",
+        "equity",
+        "margin",
+        "margin_free",
+        "margin_level",
+        "margin_so_call",
+        "margin_so_so",
+        "margin_initial",
+        "margin_maintenance",
+        "assets",
+        "liabilities",
+        "commission_blocked",
+        "name",
+        "server",
+        "currency",
+        "company"
+      ],
+      "SymbolInfo": [
+        "custom",
+        "chart_mode",
+        "select",
+        "visible",
+        "session_deals",
+        "session_buy_orders",
+        "session_sell_orders",
+        "volume",
+        "volumehigh",
+        "volumelow",
+        "time",
+        "digits",
+        "spread",
+        "spread_float",
+        "ticks_bookdepth",
+        "trade_calc_mode",
+        "trade_mode",
+        "start_time",
+        "expiration_time",
+        "trade_stops_level",
+        "trade_freeze_level",
+        "trade_exemode",
+        "swap_mode",
+        "swap_rollover3days",
+        "margin_hedged_use_leg",
+        "expiration_mode",
+        "filling_mode",
+        "order_mode",
+        "order_gtc_mode",
+        "option_mode",
+        "option_right",
+        "bid",
+        "bidhigh",
+        "bidlow",
+        "ask",
+        "askhigh",
+        "asklow",
+        "last",
+        "lasthigh",
+        "lastlow",
+        "volume_real",
+        "volumehigh_real",
+        "volumelow_real",
+        "option_strike",
+        "point",
+        "trade_tick_value",
+        "trade_tick_value_profit",
+        "trade_tick_value_loss",
+        "trade_tick_size",
+        "trade_contract_size",
+        "trade_accrued_interest",
+        "trade_face_value",
+        "trade_liquidity_rate",
+        "volume_min",
+        "volume_max",
+        "volume_step",
+        "volume_limit",
+        "swap_long",
+        "swap_short",
+        "margin_initial",
+        "margin_maintenance",
+        "session_volume",
+        "session_turnover",
+        "session_interest",
+        "session_buy_orders_volume",
+        "session_sell_orders_volume",
+        "session_open",
+        "session_close",
+        "session_aw",
+        "session_price_settlement",
+        "session_price_limit_min",
+        "session_price_limit_max",
+        "margin_hedged",
+        "price_change",
+        "price_volatility",
+        "price_theoretical",
+        "price_greeks_delta",
+        "price_greeks_theta",
+        "price_greeks_gamma",
+        "price_greeks_vega",
+        "price_greeks_rho",
+        "price_greeks_omega",
+        "price_sensitivity",
+        "basis",
+        "category",
+        "currency_base",
+        "currency_profit",
+        "currency_margin",
+        "bank",
+        "description",
+        "exchange",
+        "formula",
+        "isin",
+        "name",
+        "page",
+        "path"
+      ],
+      "Tick": [
+        "time",
+        "bid",
+        "ask",
+        "last",
+        "volume",
+        "time_msc",
+        "flags",
+        "volume_real"
+      ],
+      "OrderCheckResult": [
+        "retcode",
+        "balance",
+        "equity",
+        "profit",
+        "margin",
+        "margin_free",
+        "margin_level",
+        "comment",
+        "request"
+      ],
+      "TradeRequest": [
+        "action",
+        "magic",
+        "order",
+        "symbol",
+        "volume",
+        "price",
+        "stoplimit",
+        "sl",
+        "tp",
+        "deviation",
+        "type",
+        "type_filling",
+        "type_time",
+        "expiration",
+        "comment",
+        "position",
+        "position_by"
+      ]
+    },
+    "rates_dtype": "[('time', '<i8'), ('open', '<f8'), ('high', '<f8'), ('low', '<f8'), ('close', '<f8'), ('tick_volume', '<u8'), ('spread', '<i4'), ('real_volume', '<u8')]",
+    "ticks_dtype": null,
+    "filling_mode_bitmask": {
+      "1": "ORDER_FILLING_FOK",
+      "2": "ORDER_FILLING_IOC",
+      "4": "ORDER_FILLING_RETURN"
+    },
+    "filling_matrix": [
+      {
+        "type_filling": "FOK",
+        "value": 0,
+        "retcode": 0,
+        "comment": "Done"
+      },
+      {
+        "type_filling": "IOC",
+        "value": 1,
+        "retcode": 10030,
+        "comment": "Unsupported filling mode"
+      },
+      {
+        "type_filling": "RETURN",
+        "value": 2,
+        "retcode": 10030,
+        "comment": "Unsupported filling mode"
+      }
+    ],
+    "order_round_trip": {
+      "at": "2026-10-20T16:44:40",
+      "symbol": "EURUSD",
+      "magic": 234000,
+      "filling": "ORDER_FILLING_FOK",
+      "open_request": {
+        "action": 1,
+        "symbol": "EURUSD",
+        "volume": 0.01,
+        "type": 0,
+        "price": 1.1209,
+        "deviation": 30,
+        "magic": 234000,
+        "comment": "py-roundtrip open",
+        "type_time": 0,
+        "type_filling": 0
+      },
+      "open_result": {
+        "retcode": "10009",
+        "deal": "58574738308",
+        "order": "58970981795",
+        "volume": "0.01",
+        "price": "1.1209",
+        "bid": "0.0",
+        "ask": "0.0",
+        "comment": "Request executed",
+        "request_id": "4053463544",
+        "retcode_external": "0",
+        "request": "TradeRequest(action=1, magic=234000, order=0, symbol='EURUSD', volume=0.01, price=1.1209, stoplimit=0.0, sl=0.0, tp=0.0, deviation=30, type=0, type_filling=0, type_time=0, expiration=0, comment='py-roundtrip open', position=0, position_by=0)"
+      },
+      "close_request": {
+        "action": 1,
+        "symbol": "EURUSD",
+        "volume": 0.01,
+        "type": 1,
+        "position": 58970981795,
+        "price": 1.12089,
+        "deviation": 30,
+        "magic": 234000,
+        "comment": "py-roundtrip close",
+        "type_time": 0,
+        "type_filling": 0
+      },
+      "close_result": {
+        "retcode": "10009",
+        "deal": "58574738813",
+        "order": "58970982315",
+        "volume": "0.01",
+        "price": "1.12089",
+        "bid": "0.0",
+        "ask": "0.0",
+        "comment": "Request executed",
+        "request_id": "4053463545",
+        "retcode_external": "0",
+        "request": "TradeRequest(action=1, magic=234000, order=0, symbol='EURUSD', volume=0.01, price=1.12089, stoplimit=0.0, sl=0.0, tp=0.0, deviation=30, type=1, type_filling=0, type_time=0, expiration=0, comment='py-roundtrip close', position=58970981795, position_by=0)"
+      },
+      "position": {
+        "ticket": "58970981795",
+        "time": "1792507478",
+        "time_msc": "1792507478282",
+        "time_update": "1792507478",
+        "time_update_msc": "1792507478282",
+        "type": "0",
+        "magic": "234000",
+        "identifier": "58970981795",
+        "reason": "3",
+        "volume": "0.01",
+        "price_open": "1.1209",
+        "sl": "0.0",
+        "tp": "0.0",
+        "price_current": "1.12089",
+        "swap": "0.0",
+        "profit": "-0.01",
+        "symbol": "EURUSD",
+        "comment": "py-roundtrip ope",
+        "external_id": ""
+      },
+      "deals_by_ticket": {
+        "open deal": {
+          "ticket": "58574738308",
+          "order": "58970981795",
+          "time": "1792507478",
+          "time_msc": "1792507478282",
+          "type": "0",
+          "entry": "0",
+          "magic": "234000",
+          "position_id": "58970981795",
+          "reason": "3",
+          "volume": "0.01",
+          "price": "1.1209",
+          "commission": "0.0",
+          "swap": "0.0",
+          "profit": "0.0",
+          "fee": "0.0",
+          "symbol": "EURUSD",
+          "comment": "py-roundtrip ope",
+          "external_id": ""
+        },
+        "close deal": {
+          "ticket": "58574738813",
+          "order": "58970982315",
+          "time": "1792507480",
+          "time_msc": "1792507480518",
+          "type": "1",
+          "entry": "1",
+          "magic": "234000",
+          "position_id": "58970981795",
+          "reason": "3",
+          "volume": "0.01",
+          "price": "1.12089",
+          "commission": "0.0",
+          "swap": "0.0",
+          "profit": "-0.01",
+          "fee": "0.0",
+          "symbol": "EURUSD",
+          "comment": "py-roundtrip clo",
+          "external_id": ""
+        }
+      },
+      "orders_by_ticket": {
+        "open order": {
+          "ticket": "58970981795",
+          "time_setup": "1792507478",
+          "time_setup_msc": "1792507478282",
+          "time_done": "1792507478",
+          "time_done_msc": "1792507478282",
+          "time_expiration": "0",
+          "type": "0",
+          "type_time": "0",
+          "type_filling": "0",
+          "state": "4",
+          "magic": "234000",
+          "position_id": "58970981795",
+          "position_by_id": "0",
+          "reason": "3",
+          "volume_initial": "0.01",
+          "volume_current": "0.0",
+          "price_open": "0.0",
+          "sl": "0.0",
+          "tp": "0.0",
+          "price_current": "1.1209",
+          "price_stoplimit": "0.0",
+          "symbol": "EURUSD",
+          "comment": "py-roundtrip ope",
+          "external_id": ""
+        },
+        "close order": {
+          "ticket": "58970982315",
+          "time_setup": "1792507480",
+          "time_setup_msc": "1792507480518",
+          "time_done": "1792507480",
+          "time_done_msc": "1792507480518",
+          "time_expiration": "0",
+          "type": "1",
+          "type_time": "0",
+          "type_filling": "0",
+          "state": "4",
+          "magic": "234000",
+          "position_id": "58970981795",
+          "position_by_id": "0",
+          "reason": "3",
+          "volume_initial": "0.01",
+          "volume_current": "0.0",
+          "price_open": "0.0",
+          "sl": "0.0",
+          "tp": "0.0",
+          "price_current": "1.12089",
+          "price_stoplimit": "0.0",
+          "symbol": "EURUSD",
+          "comment": "py-roundtrip clo",
+          "external_id": ""
+        }
+      },
+      "positions_after": 0
+    }
+  },
+  "measured_notes": {
+    "history_deals_get": "**Measured calling convention.** The range form needs **both** dates and only as positional arguments: `history_deals_get(since, now)`. A single date, a third positional argument, or keyword arguments all return `None` with `last_error() == (-2, 'Invalid arguments')`. The single-record form uses the keyword filter: `history_deals_get(ticket=...)` or `history_deals_get(position=...)`.",
+    "history_orders_get": "**Measured calling convention.** Same as `history_deals_get`: `history_orders_get(since, now)` positionally, or `history_orders_get(ticket=...)` as a keyword filter.",
+    "history_deals_total": "**Measured calling convention.** `history_deals_total(since, now)` - two positional dates. With no arguments it returns `None` with `(-2, 'Invalid arguments')`; with keyword arguments it raises `TypeError`.",
+    "history_orders_total": "**Measured calling convention.** `history_orders_total(since, now)` - two positional dates. With no arguments it returns `None` with `(-2, 'Invalid arguments')`; with keyword arguments it raises `TypeError`.",
+    "order_check": "**Measured.** `order_check` has its own retcode: `0` with comment `'Done'` means the request is acceptable. Only then are `balance`, `equity`, `margin`, `margin_free` and `margin_level` populated. It does **not** use the `TRADE_RETCODE_*` family.",
+    "order_send": "**Measured.** Success is `retcode == mt5.TRADE_RETCODE_DONE` (10009) with comment `'Request executed'`. `bid` and `ask` stay `0.0` in the answer; the fill price is in `price`. The `request` field echoes the structure the terminal received.",
+    "symbol_info": "**Measured.** `filling_mode` is a bitmask (1=FOK, 2=IOC, 4=RETURN) and the package does not export `SYMBOL_FILLING_*`, so map it yourself before choosing `type_filling`. A mismatch is rejected with retcode `10030`.",
+    "copy_ticks_from": "**Measured.** Returns `None` when the account has no tick history for the requested window - that is not an error, it means the feed has no ticks there.",
+    "positions_get": "**Measured.** Returns a tuple of `TradePosition`; an empty tuple when there are no open positions. `None` means the call itself failed - check `last_error()`."
+  }
+}
